@@ -26,5 +26,6 @@ Java 8 is required locally.
 4. Join with the Railway TCP proxy `host:port`, not the HTTPS web URL.
 
 The repo now honors the main Railway Minecraft variables you pasted, including `EULA`, `MOTD`, `MAX_MEMORY`, `MAX_TICK_TIME`, `JVM_DD_OPTS`, and `USE_AIKAR_FLAGS`.
+If your Railway service uses `Root Directory=/server`, this repo now also includes `server/Dockerfile` and `server/entrypoint.sh` for that setup.
 
 See [README-server.md](README-server.md) for the fuller setup notes.

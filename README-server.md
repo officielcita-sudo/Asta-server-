@@ -20,6 +20,7 @@ The batch launcher already auto-confirms the missing client-only registry entrie
 3. Create a TCP Proxy that targets internal port `25565`.
 4. Use the TCP proxy host and port in Minecraft, not the `https://...up.railway.app/` URL.
 5. Keep sleep/serverless disabled so the server stays online for players.
+6. If Railway is configured with `Root Directory=/server`, the repo now includes [server/Dockerfile](C:\Users\astam\Downloads\FTB Presents Stoneblock 2\FTB Presents Stoneblock 2\server\Dockerfile) for that layout too.
 
 Supported env vars in this custom image:
 
@@ -35,8 +36,15 @@ Supported env vars in this custom image:
 - `ONLINE_MODE`
 - `MAX_PLAYERS`
 - `DIFFICULTY`
+- `FORCE_REINITIALIZE`
 
 Template-only vars such as `ENABLE_AUTOPAUSE`, `AUTOPAUSE_TIMEOUT_EST`, `AUTOPAUSE_TIMEOUT_INIT`, and `EXISTING_OPS_FILE` are not fully implemented by this custom image.
+
+Notes for Railway:
+
+- The public `*.up.railway.app` URL is HTTP and will show an error page for a Minecraft server. Use the Railway TCP proxy `host:port` instead.
+- If a persistent volume already contains older server data, set `FORCE_REINITIALIZE=true` for one deploy to replace `/data` from the repo template, then turn it back off.
+- `MAX_MEMORY=8G` on an 8 GB replica is usually too high. The launcher now auto-clamps heap to leave headroom, but `6G` is still a safer manual setting.
 
 ## Notes
 
