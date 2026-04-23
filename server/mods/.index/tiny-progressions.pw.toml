@@ -1,0 +1,16 @@
+filename = 'tinyprogressions-1.12.2-3.3.34-Release.jar'
+name = 'Tiny Progressions'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '4fc3cd9b1b7e290cd3a2d54576194c76fdda2e6f'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2721018
+project-id = 250850

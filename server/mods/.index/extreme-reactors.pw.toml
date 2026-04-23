@@ -1,0 +1,16 @@
+filename = 'ExtremeReactors-1.12.2-0.4.5.50.jar'
+name = 'Extreme Reactors'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'beta'
+
+[download]
+hash = '0d06529f44873fd2cab541976506c7b12bdfbceb'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2648892
+project-id = 250277

@@ -1,0 +1,16 @@
+filename = 'Exchangers-1.12.2-2.8.jar'
+name = 'Exchangers'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.12', '1.12.1', '1.12.2' ]
+x-prismlauncher-release-type = 'beta'
+
+[download]
+hash = 'b2b2165d1bb524c6caa7a6bba572fa6a306b6955'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2621277
+project-id = 270183

@@ -1,0 +1,3 @@
+#By changing the setting below to your mac address you are indicating your agreement to CreeperHost's privacy policy (https://www.creeperhost.net/privacy) and Terms of Service (https://www.creeperhost.net/tos).
+#Thu Apr 23 10:56:54 WEST 2026
+gdpr=false

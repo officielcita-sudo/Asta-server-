@@ -1,0 +1,16 @@
+filename = 'VanillaFix-1.0.10-99.jar'
+name = 'VanillaFix'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12', '1.12.1', '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'f8181cd78a0efe8c51d4f0cd46a1c83c373a1f7d'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2639533
+project-id = 292785

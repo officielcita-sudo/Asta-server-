@@ -1,0 +1,16 @@
+filename = 'StoneBlockUtilities-2.1.5.jar'
+name = 'StoneBlock Utilities'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '9c09b85e59b82af1183c197e0f3ec5fd69ca3ba4'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2706845
+project-id = 282561

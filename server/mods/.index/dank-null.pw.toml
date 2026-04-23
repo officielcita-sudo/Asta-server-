@@ -1,0 +1,16 @@
+filename = 'DankNull-1.12.2-1.6.80.jar'
+name = '/dank/null'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '991e1cda22e50487ff3975fd6ece877a73e1f0a4'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2780194
+project-id = 272514

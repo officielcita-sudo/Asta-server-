@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enderio:recipes xmlns:enderio="http://enderio.com/recipes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://enderio.com/recipes recipes.xsd ">
+  <recipe name="Gear, Wood" required="true" disabled="true">
+    <crafting>
+      <grid>
+        <item /><item name="stickWood"/><item />
+        <item name="stickWood"/><item /><item name="stickWood"/>
+        <item /><item name="stickWood"/><item />
+      </grid>
+      <output name="GEAR_WOOD"/>
+    </crafting>
+  </recipe>
+
+  <recipe name="Gear, ae2 messes things up" required="true" disabled="true">
+    <crafting>
+      <grid>
+        <item name="stickWood"/><item /><item name="stickWood"/>
+        <item /><item /><item />
+        <item name="stickWood"/><item /><item name="stickWood"/>
+      </grid>
+      <output name="GEAR_WOOD"/>
+    </crafting>
+  </recipe>
+
+  <recipe name="Gear, just to be sure" required="true" disabled="true">
+    <crafting>
+      <grid size="3x2">
+        <item name="stickWood"/><item /><item name="stickWood"/>
+        <item name="stickWood"/><item /><item name="stickWood"/>
+      </grid>
+      <output name="GEAR_WOOD"/>
+    </crafting>
+  </recipe>
+
+  <recipe name="Gear, better save than sorry" required="true" disabled="true">
+    <crafting>
+      <grid size="2x3">
+        <item name="stickWood"/><item name="stickWood"/>
+        <item /><item />
+        <item name="stickWood"/><item name="stickWood"/>
+      </grid>
+      <output name="GEAR_WOOD"/>
+    </crafting>
+  </recipe>
+  <recipe name="Gear, Stone" required="true" disabled="true">
+    <crafting>
+      <grid>
+        <item name="stickWood"/><item name="oredict:cobblestone"/><item name="stickWood"/>
+        <item name="oredict:cobblestone"/><item /><item name="oredict:cobblestone"/>
+        <item name="stickWood"/><item name="oredict:cobblestone"/><item name="stickWood"/>
+      </grid>
+      <output name="GEAR_STONE"/>
+    </crafting>
+  </recipe>
+
+  <recipe name="Gear, Stone, Upgrade" required="true" disabled="true">
+    <crafting>
+      <grid>
+        <item /><item name="oredict:cobblestone"/><item />
+        <item name="oredict:cobblestone"/><item name="GEAR_WOOD"/><item name="oredict:cobblestone"/>
+        <item /><item name="oredict:cobblestone"/><item />
+      </grid>
+      <output name="GEAR_STONE"/>
+    </crafting>
+  </recipe>
+
+  <recipe name="Tweak: Stick from Wood" required="false" disabled="true">
+    <crafting>
+      <grid size="1x2">
+        <item name="logWood"/>
+        <item name="logWood"/>
+      </grid>
+      <output name="stickWood" amount="16" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Tweak: Chest from Wood" required="false" disabled="true">
+    <crafting>
+      <grid>
+        <item name="logWood"/><item name="logWood"/><item name="logWood"/>
+        <item name="logWood"/><item/><item name="logWood"/>
+        <item name="logWood"/><item name="logWood"/><item name="logWood"/>
+      </grid>
+      <output name="chestWood" amount="4" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Enchanter: cofhcore:multishot" required="false" disabled="true">
+    <enchanting>
+      <input name="SKELETAL_CONTRACTOR" amount="1"/>
+      <enchantment name="cofhcore:multishot" costMultiplier="1"/>
+    </enchanting>
+  </recipe>
+
+  <recipe name="Solar Panel 1" required="true" disabled="true">
+    <crafting>
+      <grid size="3x3">
+        <item name="ELECTRICAL_STEEL" /><item name="FUSED_GLASS" /><item name="ELECTRICAL_STEEL" />
+        <item name="itemPlatePhotovoltaic" /><item name="itemPlatePhotovoltaic" /><item name="itemPlatePhotovoltaic" />
+        <item name="POWDER_INFINITY" /><item name="GEAR_IRON" /><item name="POWDER_INFINITY" />
+      </grid>
+      <output name="SOLAR_1" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Solar Panel 2" required="true" disabled="true">
+    <crafting>
+      <grid size="3x3">
+        <item name="ENERGETIC_ALLOY" /><item name="FUSED_QUARTZ" /><item name="ENERGETIC_ALLOY" />
+        <item name="itemPlatePhotovoltaic" /><item name="itemPlatePhotovoltaic" /><item name="itemPlatePhotovoltaic" />
+        <item name="CAPACITOR1" /><item name="minecraft:daylight_detector" /><item name="CAPACITOR1" />
+      </grid>
+      <output name="SOLAR_2" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Solar Panel 2, Upgrade" required="true" disabled="true">
+    <crafting>
+      <grid size="3x3">
+        <item name="ENERGETIC_ALLOY" /><item name="FUSED_QUARTZ" /><item name="ENERGETIC_ALLOY" />
+        <item /><item name="SOLAR_1" /><item />
+        <item name="CAPACITOR1" /><item name="minecraft:daylight_detector" /><item name="CAPACITOR1" />
+      </grid>
+      <output name="SOLAR_2" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Solar Panel 3" required="true" disabled="true">
+    <crafting>
+      <grid size="3x3">
+        <item name="PULSATING_IRON" /><item name="ENLIGHTED_QUARTZ" /><item name="PULSATING_IRON" />
+        <item name="itemPlatePhotovoltaic" /><item name="itemPlatePhotovoltaic" /><item name="itemPlatePhotovoltaic" />
+        <item name="CAPACITOR2" /><item name="minecraft:daylight_detector" /><item name="CAPACITOR2" />
+      </grid>
+      <output name="SOLAR_3" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Solar Panel 3, Upgrade" required="true" disabled="true">
+    <crafting>
+      <grid size="3x3">
+        <item name="PULSATING_IRON" /><item name="ENLIGHTED_QUARTZ" /><item name="PULSATING_IRON" />
+        <item name="ENERGETIC_ALLOY" /><item name="dustCoal" /><item name="ENERGETIC_ALLOY" />
+        <item name="CAPACITOR1" /><item name="SOLAR_2" /><item name="CAPACITOR1" />
+      </grid>
+      <output name="SOLAR_3" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Solar Panel 4" required="true" disabled="true">
+    <crafting>
+      <grid size="3x3">
+        <item name="VIBRANT_ALLOY" /><item name="DARK_QUARTZ" /><item name="VIBRANT_ALLOY" />
+        <item name="itemPlatePhotovoltaic" /><item name="itemPlatePhotovoltaic" /><item name="itemPlatePhotovoltaic" />
+        <item name="CAPACITOR3" /><item name="minecraft:daylight_detector" /><item name="CAPACITOR3" />
+      </grid>
+      <output name="SOLAR_4" />
+    </crafting>
+  </recipe>
+
+  <recipe name="Solar Panel 4, Upgrade" required="true" disabled="true">
+    <crafting>
+      <grid size="3x3">
+        <item name="VIBRANT_ALLOY" /><item name="DARK_QUARTZ" /><item name="VIBRANT_ALLOY" />
+        <item name="VIBRANT_ALLOY" /><item name="oredict:glowstone" /><item name="VIBRANT_ALLOY" />
+        <item name="CAPACITOR2" /><item name="SOLAR_3" /><item name="CAPACITOR2" />
+      </grid>
+      <output name="SOLAR_4" />
+    </crafting>
+  </recipe>
+
+  <!-- Ex Nihilo Creatio Enchants START-->
+  <recipe name="Enchanter: exnihilocreatio:sieve_fortune" required="true">
+    <enchanting>
+      <input name="excompressum:compressed_block:7" amount="10"/>
+      <enchantment name="exnihilocreatio:sieve_fortune" costMultiplier="1"/>
+    </enchanting>
+  </recipe>
+
+  <recipe name="Enchanter: exnihilocreatio:sieve_efficiency" required="true">
+    <enchanting>
+      <input name="excompressum:compressed_block:6" amount="8"/>
+      <enchantment name="exnihilocreatio:sieve_efficiency" costMultiplier="1"/>
+    </enchanting>
+  </recipe>
+
+  <recipe name="Enchanter: exnihilocreatio:sieve_luck_of_the_sea" required="true">
+    <enchanting>
+      <input name="excompressum:compressed_block" amount="4"/>
+      <enchantment name="exnihilocreatio:sieve_luck_of_the_sea" costMultiplier="1"/>
+    </enchanting>
+  </recipe>
+  <!-- Ex Nihilo Creatio Enchants END-->
+  <recipe name="Sagmill: Silicon" required="true" disabled="true">
+    <sagmilling energy="720">
+      <input name="oredict:sand"/>
+      <output name="itemSilicon" chance="0.5" />
+    </sagmilling>
+  </recipe>
+  <recipe name="Sagmill: Cobblestone" required="true" disabled="true">
+    <sagmilling energy="2400">
+      <input name="oredict:cobblestone"/>
+      <output name="oredict:gravel" chance="0.7" />
+      <output name="oredict:gravel" chance="0.3" />
+      <output name="oredict:sand" chance="0.1" />
+      <output name="oredict:itemFlint" chance="0.05" />
+    </sagmilling>
+  </recipe>
+  <recipe name="Sagmill: Gravel" required="true" disabled="true">
+    <sagmilling energy="2400">
+      <input name="oredict:gravel"/>
+      <output name="oredict:sand" chance="0.7" />
+      <output name="oredict:sand" chance="0.3" />
+      <output name="oredict:itemFlint" chance="0.3" />
+    </sagmilling>
+  </recipe>
+
+  <recipe name="Cobblestone" required="true">
+    <sagmilling energy="2400">
+      <input name="oredict:cobblestone"/>
+      <output name="oredict:gravel" chance="0.7" />
+      <output name="oredict:gravel" chance="0.3" />
+      <output name="oredict:itemFlint" chance="0.05" />
+    </sagmilling>
+  </recipe>
+  <recipe name="Gravel" required="true">
+    <sagmilling energy="2400">
+      <input name="oredict:gravel"/>
+      <output name="oredict:dirt" chance="0.7" />
+      <output name="oredict:dirt" chance="0.3" />
+    </sagmilling>
+  </recipe>
+  <recipe name="Dirt" required="true">
+    <sagmilling energy="2400">
+      <input name="oredict:dirt"/>
+      <output name="oredict:sand" chance="0.7" />
+      <output name="oredict:sand" chance="0.3" />
+    </sagmilling>
+  </recipe>
+  <recipe name="Sand" required="true">
+    <sagmilling energy="2400">
+      <input name="oredict:sand"/>
+      <output name="oredict:dust" chance="0.7" />
+      <output name="oredict:dust" chance="0.3" />
+    </sagmilling>
+  </recipe>
+
+  <recipe name="Enchanter: enderio:witherweapon" required="true" disabled="false">
+    <enchanting>
+      <input name="darkutils:material" amount="4"/>
+      <enchantment name="enderio:witherweapon" costMultiplier="1"/>
+    </enchanting>
+  </recipe>
+
+</enderio:recipes>

@@ -1,0 +1,16 @@
+filename = 'IntegrationForegoing-1.12.2-1.9.jar'
+name = 'Integration Foregoing'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.12', '1.12.1', '1.12.2' ]
+x-prismlauncher-release-type = 'beta'
+
+[download]
+hash = '50af4c593278141288ffd5309d2e57d2a5622dfc'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2676458
+project-id = 277938

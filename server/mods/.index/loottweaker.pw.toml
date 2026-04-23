@@ -1,0 +1,16 @@
+filename = 'LootTweaker-1.12.2-0.0.10.jar'
+name = 'LootTweaker'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'beta'
+
+[download]
+hash = '7e96eba7da07bc5e6d2bbb018d3ac1e87f20f0a9'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2729616
+project-id = 255257

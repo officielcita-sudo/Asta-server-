@@ -1,0 +1,16 @@
+filename = 'quantumflux-1.12.2-2.0.18.jar'
+name = 'QuantumFlux'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'beta'
+
+[download]
+hash = '65b532f90926e5a86935b16cf6008976d837fe5d'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2703415
+project-id = 228609

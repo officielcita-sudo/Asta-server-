@@ -1,0 +1,16 @@
+filename = 'RealisticItemDrops-1.2.14.jar'
+name = 'Realistic Item Drops'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'b9ab3f37a13c78d8c3c3fb4257374ad4ae90ae1b'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2630384
+project-id = 245620

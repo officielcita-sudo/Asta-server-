@@ -1,0 +1,16 @@
+filename = 'tesla-core-lib-1.12.2-1.0.15.jar'
+name = 'Tesla Core Lib'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'beta'
+
+[download]
+hash = '3e8b6133163f44644b7911027a986f4a2bf3c100'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2580052
+project-id = 254602

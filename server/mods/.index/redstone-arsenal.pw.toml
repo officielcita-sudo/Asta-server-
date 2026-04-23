@@ -1,0 +1,16 @@
+filename = 'RedstoneArsenal-1.12.2-2.6.3.18-universal.jar'
+name = 'Redstone Arsenal'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '8a8046494d114272f89f1e4cd02bc821558f2007'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2715786
+project-id = 70631

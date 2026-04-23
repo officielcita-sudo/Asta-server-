@@ -1,0 +1,16 @@
+filename = 'industrialmeat-1.12-1.0.2.jar'
+name = 'Industrial Meat'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12', '1.12.1', '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '84e032b3dacdaaec8f54a44ec21aeacf94f8e0d0'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2499192
+project-id = 281525

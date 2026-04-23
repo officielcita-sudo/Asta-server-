@@ -1,0 +1,16 @@
+filename = 'ActuallyBaubles-1.12-1.1.jar'
+name = 'Actually Baubles'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12', '1.12.1', '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'f9ff7eff30f5de77a67ddf3ff965e51b1d9e0616'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2459131
+project-id = 273430

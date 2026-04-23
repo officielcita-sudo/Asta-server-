@@ -1,0 +1,16 @@
+filename = 'ServerLevelType-1.2.jar'
+name = 'ServerLevelType'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '44e00dcdc1e44f4977fbc99a144ca2a902f9ed23'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2656273
+project-id = 310493

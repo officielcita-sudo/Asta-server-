@@ -1,0 +1,16 @@
+filename = 'MainMenuScale-1.3.2.jar'
+name = 'Main Menu Scale'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '7ed5d032257e58807832036930f637ddfaa00029'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2683258
+project-id = 310375

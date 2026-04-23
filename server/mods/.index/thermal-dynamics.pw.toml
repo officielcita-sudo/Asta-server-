@@ -1,0 +1,16 @@
+filename = 'ThermalDynamics-1.12.2-2.5.5.21-universal.jar'
+name = 'Thermal Dynamics'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '614a98009f39fb204fe269ffc109df77362f8314'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2716138
+project-id = 227443

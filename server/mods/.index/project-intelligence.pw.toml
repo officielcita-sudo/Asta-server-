@@ -1,0 +1,16 @@
+filename = 'ProjectIntelligence-1.12.2-1.0.8.25-universal.jar'
+name = 'Project Intelligence'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '22b82fae1daec2366b20605c6cefcd7ea8f5c23c'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2762334
+project-id = 306028

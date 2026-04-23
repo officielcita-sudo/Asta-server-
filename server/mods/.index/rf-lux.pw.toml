@@ -1,0 +1,16 @@
+filename = 'rflux-1.12-0.4.0.jar'
+name = 'RF Lux'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '546f9131df40202267efd47eab6152d06121efda'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2704416
+project-id = 250207

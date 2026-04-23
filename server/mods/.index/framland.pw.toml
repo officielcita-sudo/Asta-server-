@@ -1,0 +1,16 @@
+filename = 'framland-1.12.2-1.0.10.jar'
+name = 'Framland'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'd68226ab04e38edb927912daa16ef18916da9465'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2694869
+project-id = 311022

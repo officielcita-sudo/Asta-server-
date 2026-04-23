@@ -1,0 +1,16 @@
+filename = 'Bookshelf-1.12.2-2.3.585.jar'
+name = 'Bookshelf'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'efb3426fe7b704ad85d9a33d81eab2124234f750'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2727800
+project-id = 228525

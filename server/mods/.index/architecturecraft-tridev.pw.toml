@@ -1,0 +1,16 @@
+filename = 'architecturecraft-1.12-3.98.jar'
+name = 'ArchitectureCraft - TridentMC Version'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12', '1.12.1', '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'b84097e2f7d76904333c872edeaa7749d6e10279'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2750633
+project-id = 277631

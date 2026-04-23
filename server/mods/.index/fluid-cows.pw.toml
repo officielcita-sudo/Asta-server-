@@ -1,0 +1,16 @@
+filename = 'FluidCows-1.1.21.jar'
+name = 'Fluid cows'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'cf595ce9db53c9293df7fda342b7da81f475c6fa'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2763322
+project-id = 304385

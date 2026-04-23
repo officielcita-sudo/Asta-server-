@@ -1,0 +1,16 @@
+filename = 'angelRingToBauble-1.12-0.3.1.50+d4e654e.jar'
+name = 'Angel Ring To Bauble'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12', '1.12.1', '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '6c9cb27f8968fe67b83dfd36cbebd4db64e6984d'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2518561
+project-id = 256224

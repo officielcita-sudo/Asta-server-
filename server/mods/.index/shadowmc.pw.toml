@@ -1,0 +1,16 @@
+filename = 'ShadowMC-1.12-3.8.0.jar'
+name = 'ShadowMC'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12', '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'b8a768faf4cef751dbfadec81bd9a8a14b11ce42'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2441500
+project-id = 226780

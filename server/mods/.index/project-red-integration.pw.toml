@@ -1,0 +1,16 @@
+filename = 'ProjectRed-1.12.2-4.9.4.120-integration.jar'
+name = 'Project Red - Integration'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'f05cda479b14d41e02120295b4bcbb0ab25738d2'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2745548
+project-id = 229045

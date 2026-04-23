@@ -1,0 +1,29 @@
+.git/
+.gitattributes
+
+# Keep the repo focused on the dedicated server deployment.
+/flame/
+/minecraft/
+/instance.cfg
+/mmc-pack.json
+
+# Local runtime output.
+/server/.mixin.out/
+/server/logs/
+/server/snapshots-server/
+/server/*.log
+/server/*.lck
+/server/world-*.zip
+/server/options.txt
+/server/usercache.json
+/server/banned-ips.json
+/server/banned-players.json
+/server/ops.json
+/server/whitelist.json
+/server/world/session.lock
+/server/llibrary/debug/
+/server/local/client/
+
+# Temporary local validation output.
+/*-test.log
+/*-test.err.log

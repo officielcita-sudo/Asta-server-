@@ -1,0 +1,16 @@
+filename = 'cxlibrary-1.12.1-1.6.1.jar'
+name = 'CXLibrary'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12', '1.12.1', '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'f07bed909d861140ffa5c7dc018587b95e275052'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2463886
+project-id = 244023

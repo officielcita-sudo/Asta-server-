@@ -1,0 +1,16 @@
+filename = 'rftools-1.12-7.72.jar'
+name = 'RFTools'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '6c75e7f774131944847bc61a119f3d4aaa33ca9d'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2745848
+project-id = 224641

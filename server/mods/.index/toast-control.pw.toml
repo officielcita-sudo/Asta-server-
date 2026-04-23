@@ -1,0 +1,16 @@
+filename = 'Toast Control-1.12.2-1.8.1.jar'
+name = 'Toast Control'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '7365b5415d5f1a39997fe142ccc42ae732e31c01'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2707353
+project-id = 271740

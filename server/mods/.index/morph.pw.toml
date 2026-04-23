@@ -1,0 +1,16 @@
+filename = 'Morph-1.12.2-7.1.3.jar'
+name = 'Morph'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12', '1.12.1', '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'e1bcf0f9773486d74f943f7875f66bfe7452f9b3'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2682821
+project-id = 229080

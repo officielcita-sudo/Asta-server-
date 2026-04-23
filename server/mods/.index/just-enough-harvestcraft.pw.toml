@@ -1,0 +1,16 @@
+filename = 'jehc-1.12.2-1.6.4.jar'
+name = 'Just Enough HarvestCraft (JEHC)'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12', '1.12.1', '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '5c90100dcef59991f6816582c63fbf265eba23d2'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2723786
+project-id = 267939

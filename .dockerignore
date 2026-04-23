@@ -1,0 +1,17 @@
+*
+!server/
+!server/**
+!Dockerfile
+!entrypoint.sh
+!README-server.md
+!.dockerignore
+server/*.log
+server/*.lck
+server/*installer.jar
+server/world-*.zip
+server/boot-*.*
+server/logs/
+server/.mixin.out/
+server/snapshots-server/
+server/options.txt
+server/usercache.json

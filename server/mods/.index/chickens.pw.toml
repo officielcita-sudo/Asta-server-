@@ -1,0 +1,16 @@
+filename = 'chickens-6.1.0.jar'
+name = 'Chickens'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'beta'
+
+[download]
+hash = '0a5a336c4a7c32fcb89a79c39b27d392e74cff92'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2545467
+project-id = 241941

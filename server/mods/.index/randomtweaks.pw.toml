@@ -1,0 +1,16 @@
+filename = 'randomtweaks-1.12.2-2.7.1.0.jar'
+name = 'RandomTweaks'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12', '1.12.1', '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '621e7621e9d945a77110adea287cca0eb2d77927'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2758483
+project-id = 258205

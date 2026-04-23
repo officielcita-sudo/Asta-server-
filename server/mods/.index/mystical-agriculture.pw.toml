@@ -1,0 +1,16 @@
+filename = 'MysticalAgriculture-1.12.2-1.7.5.jar'
+name = 'Mystical Agriculture'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'dd7b50ccebda09f8cb44d35997827ae3450455d1'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2704562
+project-id = 246640

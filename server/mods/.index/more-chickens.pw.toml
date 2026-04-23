@@ -1,0 +1,16 @@
+filename = 'morechickens-1.12.2-3.1.0.jar'
+name = 'More Chickens'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '8afa1743a42d338e88edb69f0475f45f106d1bfd'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2521137
+project-id = 251786

@@ -1,0 +1,16 @@
+filename = 'MoreFurnaces-1.12.2-1.10.6.jar'
+name = 'More Furnaces'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12', '1.12.1', '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '3b4cbf74e2363e21bcde52180820467ee5432ed5'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2627678
+project-id = 78320

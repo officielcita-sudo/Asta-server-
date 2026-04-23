@@ -1,0 +1,16 @@
+filename = 'WirelessCraftingTerminal-1.12.2-3.12.93.jar'
+name = 'Wireless Crafting Terminal'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '1233d9078b82b45d0b9a1490b73b726e64efbba4'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2725872
+project-id = 244559

@@ -1,0 +1,16 @@
+filename = 'FTBUtilitiesBackups-1.0.0.4.jar'
+name = 'FTB Backups (Forge)'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '109ddd8d43efc81c7da3e6a723c9d62e4ddea209'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2716458
+project-id = 314904

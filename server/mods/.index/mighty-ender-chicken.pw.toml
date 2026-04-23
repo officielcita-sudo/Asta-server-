@@ -1,0 +1,16 @@
+filename = 'MightyEnderChicken-1.12.2-7.3.0.jar'
+name = 'Mighty Ender Chicken'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12', '1.12.1', '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '054393625cfb5ea8da5f49dc803a649c55a589b5'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2682825
+project-id = 310413

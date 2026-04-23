@@ -1,0 +1,16 @@
+filename = 'petrock-0.3.1.jar'
+name = 'Petrock - Forge'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '8b94630cb4afbeabe5e984775936f3390b7a3122'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2659913
+project-id = 230556

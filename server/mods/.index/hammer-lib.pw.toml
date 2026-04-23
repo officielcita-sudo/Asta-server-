@@ -1,0 +1,16 @@
+filename = 'HammerCore-1.12.2-2.0.4.7.jar'
+name = 'HammerLib'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '12857c40fce98897685a702e8f3ccc5b18008d67'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2710204
+project-id = 247401

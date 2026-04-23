@@ -1,0 +1,16 @@
+filename = 'SimplyJetpacks2-1.12.2-2.2.14.67.jar'
+name = 'Simply Jetpacks 2'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'e4bb9e0257c1dc34bdf1b9841b5c32fbdb21bae2'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2789696
+project-id = 251792

@@ -1,0 +1,16 @@
+filename = 'ItemFilters-1.0.3.12.jar'
+name = 'Item Filters'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '2cf5299329443cde00b9d43027949bc1aba11597'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2699980
+project-id = 309674

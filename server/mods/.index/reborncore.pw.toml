@@ -1,0 +1,16 @@
+filename = 'RebornCore-1.12.2-3.16.2.473-universal.jar'
+name = 'Reborn Core'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12', '1.12.1', '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '4f49ade68dd2ea44ad73f28ac81768444a91124b'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2779436
+project-id = 237903

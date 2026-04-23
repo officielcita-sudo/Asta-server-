@@ -1,0 +1,16 @@
+filename = 'Draconic-Evolution-1.12.2-2.3.24.349-universal.jar'
+name = 'Draconic Evolution'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '721639b1ad2e6537e6f6b383eafd07bc97583de3'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2753317
+project-id = 223565

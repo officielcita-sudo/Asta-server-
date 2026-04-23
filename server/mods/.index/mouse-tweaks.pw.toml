@@ -1,0 +1,16 @@
+filename = 'MouseTweaks-2.10-mc1.12.2.jar'
+name = 'Mouse Tweaks'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '0d3b0589021905b2eab8ba93805e9fdef463288e'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2671937
+project-id = 60089

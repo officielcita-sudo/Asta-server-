@@ -1,0 +1,16 @@
+filename = 'ChanceCubes-1.12.2-4.1.0.300.jar'
+name = 'Chance Cubes'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '92f8900316531557139013348ff621880e1b055f'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2764219
+project-id = 233113

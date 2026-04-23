@@ -1,0 +1,16 @@
+filename = 'MrTJPCore-1.12.2-2.1.4.43-universal.jar'
+name = 'MrTJPCore'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '981382e6c623e8fe68cee07c8ee1f6f2c77b94dd'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2735197
+project-id = 229002

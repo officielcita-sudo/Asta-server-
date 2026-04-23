@@ -1,0 +1,21 @@
+recipes.remove(<ironbackpacks:backpack>.withTag({packInfo: {upgrade: [], type: "ironbackpacks:basic", spec: "NONE"}}));
+recipes.remove(<ironbackpacks:backpack>.withTag({packInfo: {upgrade: [], type: "ironbackpacks:iron", spec: "STORAGE"}}));
+recipes.remove(<ironbackpacks:backpack>.withTag({packInfo: {upgrade: [], type: "ironbackpacks:iron", spec: "UPGRADE"}}));
+recipes.remove(<ironbackpacks:backpack>.withTag({packInfo: {upgrade: [], type: "ironbackpacks:gold", spec: "STORAGE"}}));
+recipes.remove(<ironbackpacks:backpack>.withTag({packInfo: {upgrade: [], type: "ironbackpacks:gold", spec: "UPGRADE"}}));
+recipes.remove(<ironbackpacks:backpack>.withTag({packInfo: {upgrade: [], type: "ironbackpacks:diamond", spec: "STORAGE"}}));
+recipes.remove(<ironbackpacks:backpack>.withTag({packInfo: {upgrade: [], type: "ironbackpacks:diamond", spec: "UPGRADE"}}));
+mods.jei.JEI.removeAndHide(<ironbackpacks:upgrade>);
+mods.jei.JEI.removeAndHide(<ironbackpacks:upgrade>.withTag({upgrade: "ironbackpacks:damage_bar"}));
+mods.jei.JEI.removeAndHide(<ironbackpacks:upgrade>.withTag({upgrade: "ironbackpacks:lock"}));
+mods.jei.JEI.removeAndHide(<ironbackpacks:upgrade>.withTag({upgrade: "ironbackpacks:everlasting"}));
+mods.jei.JEI.removeAndHide(<ironbackpacks:upgrade>.withTag({upgrade: "ironbackpacks:extra_upgrade"}));
+
+<ironbackpacks:backpack>.withTag({packInfo: {upgrade: [], type: "ironbackpacks:basic", spec: "NONE"}}).addTooltip(format.darkRed("Disabled due to bug!"));
+<ironbackpacks:backpack>.withTag({packInfo: {upgrade: [], type: "ironbackpacks:iron", spec: "STORAGE"}}).addTooltip(format.darkRed("Disabled due to bug!"));
+<ironbackpacks:backpack>.withTag({packInfo: {upgrade: [], type: "ironbackpacks:iron", spec: "UPGRADE"}}).addTooltip(format.darkRed("Disabled due to bug!"));
+<ironbackpacks:backpack>.withTag({packInfo: {upgrade: [], type: "ironbackpacks:gold", spec: "STORAGE"}}).addTooltip(format.darkRed("Disabled due to bug!"));
+<ironbackpacks:backpack>.withTag({packInfo: {upgrade: [], type: "ironbackpacks:gold", spec: "UPGRADE"}}).addTooltip(format.darkRed("Disabled due to bug!"));
+<ironbackpacks:backpack>.withTag({packInfo: {upgrade: [], type: "ironbackpacks:diamond", spec: "STORAGE"}}).addTooltip(format.darkRed("Disabled due to bug!"));
+<ironbackpacks:backpack>.withTag({packInfo: {upgrade: [], type: "ironbackpacks:diamond", spec: "UPGRADE"}}).addTooltip(format.darkRed("Disabled due to bug!"));
+<ironbackpacks:upgrade>.addTooltip(format.darkRed("Disabled due to bug!"));

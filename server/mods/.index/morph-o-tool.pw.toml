@@ -1,0 +1,16 @@
+filename = 'Morph-o-Tool-1.2-21.jar'
+name = 'Morph-o-Tool'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '55a363ccd8e0614229991cd1f6bf831eaf874ff7'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2658176
+project-id = 245287

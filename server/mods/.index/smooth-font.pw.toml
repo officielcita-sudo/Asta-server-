@@ -1,0 +1,16 @@
+filename = 'SmoothFont-mc1.12.2-2.1.1.jar'
+name = 'Smooth Font'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'f36f77a324d32eacc3f2c187fd0e27a5066f8e31'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2775709
+project-id = 285742

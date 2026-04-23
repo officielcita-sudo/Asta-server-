@@ -1,0 +1,16 @@
+filename = 'Xtones-1.12-1.0.8-11.jar'
+name = 'Xtones'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.12', '1.12.1', '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '7f3eddecb95195c6625e31bb0c3055cfaa7b9657'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2531411
+project-id = 257573

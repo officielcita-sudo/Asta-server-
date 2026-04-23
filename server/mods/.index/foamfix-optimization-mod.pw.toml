@@ -1,0 +1,16 @@
+filename = 'foamfix-0.10.5-1.12.2.jar'
+name = 'Foam​Fix'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '049fdaf069c9e9de78a775fd818bcc507c0870c5'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2695388
+project-id = 278494

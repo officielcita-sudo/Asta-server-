@@ -1,0 +1,16 @@
+filename = 'torchmaster_1.12.2-1.8.0.79.jar'
+name = 'Torchmaster'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '438af07381abe1ef52266b62e3a714f21c8b414b'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2769534
+project-id = 254268

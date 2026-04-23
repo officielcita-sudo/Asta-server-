@@ -1,0 +1,16 @@
+filename = 'InventoryTweaks-1.64+dev.146.jar'
+name = 'Inventory Tweaks [1.12 only] '
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'alpha'
+
+[download]
+hash = '72b671099bb0a88f664ce0e0022f857991be6288'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2670367
+project-id = 223094

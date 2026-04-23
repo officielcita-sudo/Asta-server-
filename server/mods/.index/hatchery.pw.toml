@@ -1,0 +1,16 @@
+filename = 'hatchery-1.12.2-2.2.2.jar'
+name = 'Hatchery'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'acf16d43e5ea032f7b2bef27fc72841c52341004'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2715498
+project-id = 251138

@@ -1,0 +1,16 @@
+filename = 'packcrashinfo-1.0.1.jar'
+name = 'Pack Crash Info'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '35048f14c2d60040d57e8a4789a985c5b2507892'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2621858
+project-id = 303808

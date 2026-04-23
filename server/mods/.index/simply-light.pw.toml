@@ -1,0 +1,16 @@
+filename = 'simplylight-1.12.2-0.8.7.jar'
+name = 'Simply Light'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'b3793dd11aed5924ac9d59f322827aed0bfa9f8c'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2754916
+project-id = 300331

@@ -1,0 +1,16 @@
+filename = 'appliedenergistics2-rv6-stable-7.jar'
+name = 'Applied Energistics 2'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'e5c3c11eafc5daf73652a2dabe855e3759caa8b5'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2747063
+project-id = 223794

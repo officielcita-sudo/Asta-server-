@@ -1,0 +1,16 @@
+filename = 'ProjectEX-1.0.0.10.jar'
+name = 'FTB ProjectEX'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'b25cee417e79f833b545f30bc5622ad57369ba5c'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2669289
+project-id = 311378

@@ -1,0 +1,16 @@
+filename = 'AE2WTLib-1.12.2-1.0.30.jar'
+name = 'AE2 Wireless Terminal Library'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'beta'
+
+[download]
+hash = '545d3aafb3fb4f855d2872fb674b40a35a5c8246'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2726967
+project-id = 304024

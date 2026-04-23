@@ -1,0 +1,16 @@
+filename = 'tramplestopper-1.12.2-1.2.0.5-universal.jar'
+name = 'Trample Stopper'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '97382c61348c70d38eb5ea4dee91ca8df39de550'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2686716
+project-id = 297028

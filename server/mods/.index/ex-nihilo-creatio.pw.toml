@@ -1,0 +1,16 @@
+filename = 'exnihilocreatio-1.12.2-0.4.7.1.jar'
+name = 'Ex Nihilo: Creatio'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '4b6d9b35e26656a39bc394f420dd504b3acaffbd'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2790359
+project-id = 274456

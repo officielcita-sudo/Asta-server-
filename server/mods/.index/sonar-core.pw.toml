@@ -1,0 +1,16 @@
+filename = 'sonarcore-1.12.2-5.0.19-20.jar'
+name = 'Sonar Core'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '92b7e86655202ba487f7b4d6932a8e332e503363'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2645156
+project-id = 239418

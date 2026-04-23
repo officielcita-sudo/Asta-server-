@@ -1,0 +1,16 @@
+filename = 'jei_1.12.2-4.15.0.289.jar'
+name = 'Just Enough Items (JEI)'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'beta'
+
+[download]
+hash = '9b850f9eb5874e36d67c74fdfe04bb63fb1a3677'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2765112
+project-id = 238222

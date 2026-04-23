@@ -1,0 +1,16 @@
+filename = 'ThermalExpansion-1.12.2-5.5.4.43-universal.jar'
+name = 'Thermal Expansion'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '8544ea4b0e7c4a2d679db83b28fcdfb4af161102'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2715789
+project-id = 69163

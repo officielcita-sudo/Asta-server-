@@ -1,0 +1,16 @@
+filename = "Pam's HarvestCraft 1.12.2zf.jar"
+name = "Pam's HarvestCraft"
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'ffeb8369801e898c8a1598b37d124c251f40ba93'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2771840
+project-id = 221857

@@ -1,0 +1,16 @@
+filename = 'RandomThings-MC1.12.2-4.2.7.3.jar'
+name = 'Random Things'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'f603cd8bfb8bfe1bd62d436c2b207d2e0417e9c5'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2751591
+project-id = 59816

@@ -1,0 +1,1392 @@
+{
+  "entries": [
+    {
+      "item": "avaritia:ultimate_stew|0",
+      "emc": 149909
+    },
+    {
+      "item": "redstonearsenal:material|0",
+      "emc": 1392
+    },
+    {
+      "item": "redstonearsenal:material|32",
+      "emc": 1393
+    },
+    {
+      "item": "thermalfoundation:material|167",
+      "emc": 1464
+    },
+    {
+      "item": "extrautils2:ingredients|17",
+      "emc": 17664
+    },
+    {
+      "item": "minecraft:blaze_powder|0",
+      "emc": 307
+    },
+    {
+      "item": "tconstruct:ingots|3",
+      "emc": 512
+    },
+    {
+      "item": "botania:manaresource|8",
+      "emc": 1624
+    },
+    {
+      "item": "botania:manaresource|5",
+      "emc": 1024
+    },
+    {
+      "item": "avaritia:singularity|0",
+      "emc": 29030400
+    },
+    {
+      "item": "avaritia:singularity|1",
+      "emc": 217497600
+    },
+    {
+      "item": "avaritia:singularity|2",
+      "emc": 6796800
+    },
+    {
+      "item": "avaritia:singularity|3",
+      "emc": 7488000
+    },
+    {
+      "item": "avaritia:singularity|4",
+      "emc": 12083200
+    },
+    {
+      "item": "avaritia:singularity|5",
+      "emc": 14515200
+    },
+    {
+      "item": "avaritia:singularity|6",
+      "emc": 29030400
+    },
+    {
+      "item": "avaritia:singularity|7",
+      "emc": 56217600
+    },
+    {
+      "item": "avaritia:singularity|12",
+      "emc": 142921800
+    },
+    {
+      "item": "avaritia:singularity|11",
+      "emc": 1739980800
+    },
+    {
+      "item": "avaritia:singularity|10",
+      "emc": 899481600
+    },
+    {
+      "item": "avaritia:singularity|9",
+      "emc": 116121600
+    },
+    {
+      "item": "avaritia:singularity|8",
+      "emc": 56217600
+    },
+    {
+      "item": "minecraft:iron_nugget|0",
+      "emc": 28
+    },
+    {
+      "item": "extrautils2:machine|0",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:dust|2",
+      "emc": 512
+    },
+    {
+      "item": "mekanism:otherdust|0",
+      "emc": 8192
+    },
+    {
+      "item": "thermalfoundation:material|770",
+      "emc": 16
+    },
+    {
+      "item": "mekanism:polyethene|0",
+      "emc": 288
+    },
+    {
+      "item": "mekanism:otherdust|5",
+      "emc": 8208
+    },
+    {
+      "item": "mekanism:ingot|0",
+      "emc": 8720
+    },
+    {
+      "item": "mekanism:ingot|3",
+      "emc": 896
+    },
+    {
+      "item": "mekanism:enrichedalloy|0",
+      "emc": 320
+    },
+    {
+      "item": "mekanism:reinforcedalloy|0",
+      "emc": 8512
+    },
+    {
+      "item": "mekanism:atomicalloy|0",
+      "emc": 16720
+    },
+    {
+      "item": "mekanism:controlcircuit|0",
+      "emc": 576
+    },
+    {
+      "item": "mekanism:energycube|0",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:portableteleporter|0",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:atomicdisassembler|0",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:robit|0",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:networkreader|0",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:scubatank|0",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:jetpack|0",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:freerunners|0",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:armoredjetpack|0",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:gastank|0",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:basicblock|6",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:gaugedropper|0",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:flamethrower|0",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:seismicreader|0",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:configurationcard|0",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:electricbow|0",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:machineblock2|11",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:transmitter|0",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:transmitter|1",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:transmitter|2",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:transmitter|3",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:transmitter|4",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:transmitter|5",
+      "emc": 0
+    },
+    {
+      "item": "mekanism:transmitter|6",
+      "emc": 0
+    },
+    {
+      "item": "appliedenergistics2:crystal_seed|1200",
+      "emc": 0
+    },
+    {
+      "item": "appliedenergistics2:energy_cell|0",
+      "emc": 0
+    },
+    {
+      "item": "appliedenergistics2:crystal_seed|0",
+      "emc": 0
+    },
+    {
+      "item": "compactmachines3:wallbreakable|0",
+      "emc": 152
+    },
+    {
+      "item": "compactmachines3:tunneltool|0",
+      "emc": 1033
+    },
+    {
+      "item": "compactmachines3:redstonetunneltool|0",
+      "emc": 652
+    },
+    {
+      "item": "minecraft:iron_nugget|0",
+      "emc": 28
+    },
+    {
+      "item": "extrautils2:flattransfernode|0",
+      "emc": 6
+    },
+    {
+      "item": "extrautils2:flattransfernode|1",
+      "emc": 16
+    },
+    {
+      "item": "fluidcows:cow_displayer|0",
+      "emc": 0
+    },
+    {
+      "item": "tp:dragon_scale|0",
+      "emc": 1048576
+    },
+    {
+      "item": "mysticalagradditions:stuff|3",
+      "emc": 1048576
+    },
+    {
+      "item": "mysticalagriculture:tin_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:stone_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:dirt_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:nature_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:wood_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:water_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:ice_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:fire_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:dye_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:nether_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:coal_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:iron_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:nether_quartz_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:glowstone_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:redstone_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:obsidian_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:gold_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:lapis_lazuli_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:end_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:experience_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:diamond_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:emerald_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:zombie_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:pig_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:chicken_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:sheep_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:cow_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:slime_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:wither_skeleton_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:enderman_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:guardian_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:ghast_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:blaze_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:rabbit_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:spider_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:creeper_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:skeleton_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:uranium_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:mithril_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:invar_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:electrum_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:constantan_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:nickel_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:steel_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:graphite_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:lead_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:platinum_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:iridium_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:amber_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:blizz_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:blitz_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:basalz_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:signalum_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:lumium_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:enderium_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:cobalt_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:manyullyn_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:grains_of_infinity_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:electrical_steel_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:fluxed_electrum_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:hop_graphite_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:aluminum_brass_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:knightslime_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:ardite_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:redstone_alloy_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:conductive_iron_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:soularium_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:dark_steel_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:pulsating_iron_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:energetic_alloy_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:vibrant_alloy_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:end_steel_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:mystical_flower_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:elementium_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:manasteel_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:terrasteel_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:sky_stone_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:draconium_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:black_quartz_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:alumite_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:basalt_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:limestone_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:silicon_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:marble_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:refined_obsidian_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:glowstone_ingot_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:osmium_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:thaumium_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:quicksilver_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:certus_quartz_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:fluix_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:bronze_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:brass_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:silver_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:saltpeter_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:copper_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:aluminum_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:sulfur_essence|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:grains_of_infinity_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:electrical_steel_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:manyullyn_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:cobalt_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:ardite_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:knightslime_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:aluminum_brass_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:hop_graphite_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:fluxed_electrum_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:void_metal_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:thaumium_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:energetic_alloy_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:pulsating_iron_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:dark_steel_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:quicksilver_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:terrasteel_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:elementium_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:conductive_iron_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:vibrant_alloy_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:glowstone_ingot_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:refined_obsidian_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:marble_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:osmium_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:soularium_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:sky_stone_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:draconium_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:end_steel_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:fluix_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:manasteel_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:mystical_flower_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:redstone_alloy_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:limestone_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:basalt_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:alumite_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:black_quartz_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:certus_quartz_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:iridium_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:platinum_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:slime_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:skeleton_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:creeper_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:spider_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:rabbit_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:guardian_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:blaze_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:signalum_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:lumium_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:enderium_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:enderman_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:wither_skeleton_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:silicon_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:sulfur_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:ghast_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:mithril_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:basalz_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:blitz_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:blizz_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:uranium_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:amber_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:aluminum_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:copper_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:saltpeter_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:tin_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:bronze_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:brass_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:silver_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:lead_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:graphite_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:steel_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:nickel_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:constantan_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:invar_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagradditions:tier6_inferium_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:tier4_inferium_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:tier5_inferium_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:nature_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:stone_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:dirt_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:sheep_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:cow_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:chicken_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:gold_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:obsidian_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:redstone_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:glowstone_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:tier3_inferium_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:emerald_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:diamond_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:zombie_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:pig_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:lapis_lazuli_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:end_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:experience_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:tier1_inferium_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:tier2_inferium_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:nether_quartz_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:iron_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:coal_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:nether_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagradditions:nether_star_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagradditions:dragon_egg_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagradditions:awakened_draconium_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:wood_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:water_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:ice_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:fire_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "mysticalagriculture:dye_seeds|0",
+      "emc": 0
+    },
+    {
+      "item": "botania:petal|0",
+      "emc": 64
+    },
+    {
+      "item": "botania:petal|5",
+      "emc": 64
+    },
+    {
+      "item": "botania:petal|7",
+      "emc": 64
+    },
+    {
+      "item": "botania:petal|9",
+      "emc": 64
+    },
+    {
+      "item": "botania:petal|10",
+      "emc": 64
+    },
+    {
+      "item": "botania:petal|11",
+      "emc": 64
+    },
+    {
+      "item": "botania:petal|12",
+      "emc": 64
+    },
+    {
+      "item": "botania:petal|13",
+      "emc": 64
+    },
+    {
+      "item": "botania:petal|15",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:dragon_egg|0",
+      "emc": 1048576
+    },
+    {
+      "item": "draconicevolution:dragon_heart|0",
+      "emc": 1114112
+    },
+    {
+      "item": "draconicevolution:chaos_shard|0",
+      "emc": 4096000
+    },
+    {
+      "item": "forge:bucketfilled|0",
+      "emc": 0
+    },
+    {
+      "item": "ceramics:clay_bucket|0",
+      "emc": 0
+    },
+    {
+      "item": "thaumcraft:shimmerleaf|0",
+      "emc": 256
+    },
+    {
+      "item": "thaumcraft:crystal_essence|0",
+      "emc": 2048
+    },
+    {
+      "item": "avaritia:infinity_sword|0",
+      "emc": 604256986464
+    },
+    {
+      "item": "avaritia:infinity_bow|0",
+      "emc": 375530077328
+    },
+    {
+      "item": "avaritia:infinity_pickaxe|0",
+      "emc": 713503878408
+    },
+    {
+      "item": "avaritia:infinity_shovel|0",
+      "emc": 713499830624
+    },
+    {
+      "item": "avaritia:infinity_axe|0",
+      "emc": 413078954080
+    },
+    {
+      "item": "avaritia:infinity_hoe|0",
+      "emc": 600842001920
+    },
+    {
+      "item": "avaritia:infinity_helmet|0",
+      "emc": 675976728224
+    },
+    {
+      "item": "avaritia:infinity_chestplate|0",
+      "emc": 901294907168
+    },
+    {
+      "item": "avaritia:infinity_pants|0",
+      "emc": 679391826408
+    },
+    {
+      "item": "avaritia:infinity_boots|0",
+      "emc": 375556132032
+    },
+    {
+      "item": "avaritia:endest_pearl|0",
+      "emc": 337944
+    },
+    {
+      "item": "avaritia:cosmic_meatballs|0",
+      "emc": 1152
+    },
+    {
+      "item": "avaritia:resource|5",
+      "emc": 3413380960
+    },
+    {
+      "item": "avaritia:resource|6",
+      "emc": 37552609568
+    },
+    {
+      "item": "projecte:transmutation_table|0",
+      "emc": 9779697
+    },
+    {
+      "item": "projecte:item.pe_transmutation_tablet|0",
+      "emc": 300549030269
+    },
+    {
+      "item": "tconstruct:toolforge|0",
+      "emc": 0
+    },
+    {
+      "item": "tconstruct:tooltables|2",
+      "emc": 0
+    },
+    {
+      "item": "tconstruct:tooltables|1",
+      "emc": 0
+    },
+    {
+      "item": "ironbackpacks:backpack|0",
+      "emc": 0
+    },
+    {
+      "item": "ironbackpacks:upgrade|0",
+      "emc": 0
+    },
+    {
+      "item": "minecraft:dye|4",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:bone|0",
+      "emc": 192
+    },
+    {
+      "item": "minecraft:red_flower|5",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:red_flower|4",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:red_flower|3",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:red_flower|1",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:red_flower|2",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:red_flower|0",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:yellow_flower|0",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:red_flower|8",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:red_flower|7",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:red_flower|6",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:double_plant|1",
+      "emc": 128
+    },
+    {
+      "item": "minecraft:double_plant|5",
+      "emc": 128
+    },
+    {
+      "item": "minecraft:double_plant|4",
+      "emc": 128
+    },
+    {
+      "item": "minecraft:double_plant|0",
+      "emc": 128
+    },
+    {
+      "item": "minecraft:cactus|0",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:dye|3",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:dye|0",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:dye|1",
+      "emc": 64
+    },
+    {
+      "item": "botania:petal|1",
+      "emc": 64
+    },
+    {
+      "item": "botania:petal|2",
+      "emc": 64
+    },
+    {
+      "item": "botania:petal|3",
+      "emc": 64
+    },
+    {
+      "item": "botania:petal|4",
+      "emc": 64
+    },
+    {
+      "item": "botania:petal|6",
+      "emc": 64
+    },
+    {
+      "item": "botania:petal|8",
+      "emc": 64
+    },
+    {
+      "item": "botania:petal|14",
+      "emc": 64
+    },
+    {
+      "item": "draconicevolution:crafting_injector|3",
+      "emc": 0
+    },
+    {
+      "item": "extrautils2:biomemarker|0",
+      "emc": 0
+    },
+    {
+      "item": "immersiveengineering:toolbox|0",
+      "emc": 0
+    },
+    {
+      "item": "contenttweaker:balanced_clay|0",
+      "emc": 23058430092136940
+    },
+    {
+      "item": "tconstruct:edible|4",
+      "emc": 32
+    },
+    {
+      "item": "tconstruct:edible|1",
+      "emc": 32
+    },
+    {
+      "item": "tconstruct:edible|2",
+      "emc": 32
+    }
+  ]
+}

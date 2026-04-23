@@ -1,0 +1,16 @@
+filename = 'NoTemaStahp-1.12.2-1.0.3.jar'
+name = 'No Tema Stahp'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '0b6adb16a24ea2f7ff4023876ad658e692da2e04'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2690069
+project-id = 308646

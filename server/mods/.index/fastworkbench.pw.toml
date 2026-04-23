@@ -1,0 +1,16 @@
+filename = 'FastWorkbench-1.12.2-1.7.2.jar'
+name = 'FastWorkbench'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'db57f6287b36810d86237a4e8f5a10a10f6b9aaa'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2716379
+project-id = 288885

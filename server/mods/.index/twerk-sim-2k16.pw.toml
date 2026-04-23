@@ -1,0 +1,16 @@
+filename = 'TS2K16-1.2.10.jar'
+name = 'Twerk Sim 2K16'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '6e5cebcb3c2ace433f1abf5d9c9ceb619ae2df02'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2659489
+project-id = 251301

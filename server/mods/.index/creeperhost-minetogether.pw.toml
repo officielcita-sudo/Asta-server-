@@ -1,0 +1,29 @@
+filename = 'minetogether-1.10.2-2.2.0-RC6.jar'
+name = 'MineTogether Community'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [
+    '1.10',
+    '1.10-Snapshot',
+    '1.10.1',
+    '1.10.2',
+    '1.11',
+    '1.11-Snapshot',
+    '1.11.1',
+    '1.11.2',
+    '1.12',
+    '1.12-Snapshot',
+    '1.12.1',
+    '1.12.2'
+]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'c3cbde5403a103d706979d9d6d173bf426151f98'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2765227
+project-id = 267172

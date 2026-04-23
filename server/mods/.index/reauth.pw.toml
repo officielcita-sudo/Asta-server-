@@ -1,0 +1,16 @@
+filename = 'reauth-3.6.0.jar'
+name = 'ReAuth'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12', '1.12.1', '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'be3dedc6a808f13828373176d653d2e0bb629eeb'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2560638
+project-id = 237701

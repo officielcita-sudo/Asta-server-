@@ -1,0 +1,16 @@
+filename = 'Mekanism-1.12.2-9.8.1.383.jar'
+name = 'Mekanism'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '92f807a6878a63a73b0a7be6605bc5c10988aed3'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2755008
+project-id = 268560

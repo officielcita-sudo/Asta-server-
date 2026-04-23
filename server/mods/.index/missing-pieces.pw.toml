@@ -1,0 +1,16 @@
+filename = 'missing_pieces-1.12.2-4.3.0.jar'
+name = 'Missing Pieces'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '8a9c6b791222cf94f086385ab74c6a3a57f08555'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2490951
+project-id = 236199

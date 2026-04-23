@@ -1,0 +1,16 @@
+filename = 'ImmersiveEngineering-0.12-91.jar'
+name = 'Immersive Engineering'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '336a45e2ad0a8977c899b3aa2d5291f6bf85757d'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2777603
+project-id = 231951

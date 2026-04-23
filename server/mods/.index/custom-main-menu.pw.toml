@@ -1,0 +1,16 @@
+filename = 'CustomMainMenu-MC1.12.2-2.0.9.jar'
+name = 'Custom Main Menu'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '7ccbcaa70cc448c2738bbc9b1ebf3d60703fe980'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2638282
+project-id = 226406

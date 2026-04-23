@@ -1,0 +1,16 @@
+filename = 'IntegratedTunnels-1.12.2-1.6.10.jar'
+name = 'Integrated Tunnels'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '4ae91391a67fce248afab774820332ed785d37d0'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2732756
+project-id = 251389

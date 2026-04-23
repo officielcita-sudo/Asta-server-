@@ -1,0 +1,16 @@
+filename = 'CraftTweaker2-1.12-4.1.19.jar'
+name = 'CraftTweaker'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '3f506c344ca17a6ef244d98ca1a0d921715f8c6d'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2724129
+project-id = 239197

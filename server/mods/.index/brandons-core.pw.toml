@@ -1,0 +1,16 @@
+filename = 'BrandonsCore-1.12.2-2.4.17.208-universal.jar'
+name = "Brandon's Core"
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'c6300b13fcdd0f9f137f018e97bb61d1ba112c91'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2744222
+project-id = 231382

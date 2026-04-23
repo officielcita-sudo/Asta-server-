@@ -1,0 +1,16 @@
+filename = 'FTBUtilities-5.4.0.96.jar'
+name = 'FTB Utilities (Forge)'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'e720e21f66d25e7bf93817ad3aca1ec11f0c88b1'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2706787
+project-id = 237102

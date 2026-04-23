@@ -1,0 +1,16 @@
+filename = 'ExpandedEquivalence-1.12.2-12r.jar'
+name = 'Expanded Equivalence'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'c2e5d1837535b24cabd659b22cc2cdac70b18508'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2713224
+project-id = 295222

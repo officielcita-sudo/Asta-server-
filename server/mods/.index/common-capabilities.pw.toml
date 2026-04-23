@@ -1,0 +1,16 @@
+filename = 'CommonCapabilities-1.12.2-2.4.4.jar'
+name = 'Common Capabilities'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '49bad2a0a1f77a1e546730f2ab11f55873510951'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2739226
+project-id = 247007

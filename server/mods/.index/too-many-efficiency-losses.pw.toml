@@ -1,0 +1,16 @@
+filename = 'tmel-1.12.2-1.4.0.0.jar'
+name = 'Too Many Efficiency Losses'
+side = 'both'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.12.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'f11b7b6cfe6bc5ef81f47f195693b2ea87309e3f'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 2742442
+project-id = 308851
