@@ -8,6 +8,5 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 EXPOSE 25565/tcp
-VOLUME ["/data"]
 
 ENTRYPOINT ["/entrypoint.sh"]
