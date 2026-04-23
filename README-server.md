@@ -37,6 +37,10 @@ Supported env vars in this custom image:
 - `MAX_PLAYERS`
 - `DIFFICULTY`
 - `FORCE_REINITIALIZE`
+- `ENABLE_RCON`
+- `RCON_PORT`
+- `RCON_PASSWORD`
+- `BROADCAST_RCON_TO_OPS`
 
 Template-only vars such as `ENABLE_AUTOPAUSE`, `AUTOPAUSE_TIMEOUT_EST`, `AUTOPAUSE_TIMEOUT_INIT`, and `EXISTING_OPS_FILE` are not fully implemented by this custom image.
 
@@ -45,6 +49,8 @@ Notes for Railway:
 - The public `*.up.railway.app` URL is HTTP and will show an error page for a Minecraft server. Use the Railway TCP proxy `host:port` instead.
 - If a persistent volume already contains older server data, set `FORCE_REINITIALIZE=true` for one deploy to replace `/data` from the repo template, then turn it back off.
 - `MAX_MEMORY=8G` on an 8 GB replica is usually too high. The launcher now auto-clamps heap to leave headroom, but `6G` is still a safer manual setting.
+- Railway does not give your Minecraft server a browser-based command console here. Use `railway ssh` for shell access or enable RCON for Minecraft commands.
+- To use RCON, set `ENABLE_RCON=true`, add a strong `RCON_PASSWORD`, then create a Railway TCP proxy to internal port `25575` or your chosen `RCON_PORT`.
 
 ## Notes
 

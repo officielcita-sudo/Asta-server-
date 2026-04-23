@@ -21,6 +21,10 @@ JVM_DD_OPTS="${JVM_DD_OPTS:-}"
 ENABLE_AUTOPAUSE="${ENABLE_AUTOPAUSE:-false}"
 ENABLE_ROLLING_LOGS="${ENABLE_ROLLING_LOGS:-false}"
 FORCE_REINITIALIZE="${FORCE_REINITIALIZE:-false}"
+ENABLE_RCON="${ENABLE_RCON:-false}"
+RCON_PORT="${RCON_PORT:-25575}"
+RCON_PASSWORD="${RCON_PASSWORD:-}"
+BROADCAST_RCON_TO_OPS="${BROADCAST_RCON_TO_OPS:-true}"
 
 log() {
   printf '%s\n' "$*"
@@ -167,6 +171,21 @@ set_prop "online-mode" "$ONLINE_MODE" "server.properties"
 set_prop "max-players" "$MAX_PLAYERS" "server.properties"
 set_prop "difficulty" "$DIFFICULTY" "server.properties"
 set_prop "max-tick-time" "$MAX_TICK_TIME" "server.properties"
+
+if is_true "$ENABLE_RCON"; then
+  if [ -z "$RCON_PASSWORD" ]; then
+    echo "ENABLE_RCON=true but RCON_PASSWORD is empty." >&2
+    exit 1
+  fi
+
+  set_prop "enable-rcon" "true" "server.properties"
+  set_prop "rcon.port" "$RCON_PORT" "server.properties"
+  set_prop "rcon.password" "$RCON_PASSWORD" "server.properties"
+  set_prop "broadcast-rcon-to-ops" "$BROADCAST_RCON_TO_OPS" "server.properties"
+  log "RCON enabled on port $RCON_PORT"
+else
+  set_prop "enable-rcon" "false" "server.properties"
+fi
 
 AUX_JVM_ARGS=""
 if [ -f "user_jvm_args.txt" ]; then
