@@ -21,6 +21,23 @@ The batch launcher already auto-confirms the missing client-only registry entrie
 4. Use the TCP proxy host and port in Minecraft, not the `https://...up.railway.app/` URL.
 5. Keep sleep/serverless disabled so the server stays online for players.
 
+Supported env vars in this custom image:
+
+- `EULA`
+- `MOTD`
+- `MAX_MEMORY`
+- `INIT_MEMORY`
+- `MAX_TICK_TIME`
+- `JVM_DD_OPTS`
+- `USE_AIKAR_FLAGS`
+- `MC_PORT`
+- `LEVEL_NAME`
+- `ONLINE_MODE`
+- `MAX_PLAYERS`
+- `DIFFICULTY`
+
+Template-only vars such as `ENABLE_AUTOPAUSE`, `AUTOPAUSE_TIMEOUT_EST`, `AUTOPAUSE_TIMEOUT_INIT`, and `EXISTING_OPS_FILE` are not fully implemented by this custom image.
+
 ## Notes
 
 - The first dedicated-server boot already completed successfully with this world.

@@ -25,4 +25,6 @@ Java 8 is required locally.
 3. Create a TCP proxy to internal port `25565`.
 4. Join with the Railway TCP proxy `host:port`, not the HTTPS web URL.
 
+The repo now honors the main Railway Minecraft variables you pasted, including `EULA`, `MOTD`, `MAX_MEMORY`, `MAX_TICK_TIME`, `JVM_DD_OPTS`, and `USE_AIKAR_FLAGS`.
+
 See [README-server.md](README-server.md) for the fuller setup notes.
