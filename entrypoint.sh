@@ -275,4 +275,4 @@ if is_true "$ENABLE_ROLLING_LOGS"; then
 fi
 
 log "Starting Stoneblock 2 Forge server with heap ${INIT_MEMORY}/${MAX_MEMORY} on port $MC_PORT"
-exec sh -c "java ${JAVA_OPTS:-} ${QUERY_FLAG} ${JAVA_MEMORY_ARGS} ${DD_FLAGS} ${AIKAR_FLAGS} ${AUX_JVM_ARGS} -jar ${FORGE_JAR} nogui"
+exec sh -c "java ${JAVA_OPTS:-} ${QUERY_FLAG} ${JAVA_MEMORY_ARGS} ${DD_FLAGS} ${AIKAR_FLAGS} ${AUX_JVM_ARGS} -Dlog4j.configurationFile=log4j2.xml -jar ${FORGE_JAR} nogui"

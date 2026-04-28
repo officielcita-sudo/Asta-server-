@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Custom Log4j2 configuration for Stoneblock 2 on Railway.
+  Goal: keep log output well below Railway's 500 logs/sec rate limit.
+  Strategy:
+    - Root logger set to INFO (suppresses DEBUG/TRACE from all sources).
+    - SysOut/SysErr appenders write to stdout so Railway captures them.
+    - Noisy Forge/mod loggers explicitly capped at WARN or ERROR.
+-->
+<Configuration status="WARN" monitorInterval="0">
+  <Appenders>
+    <Console name="SysOut" target="SYSTEM_OUT">
+      <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level] [%logger]: %msg%n" />
+    </Console>
+  </Appenders>
+
+  <Loggers>
+    <!-- Suppress cascading worldgen spam that Forge logs at WARN level -->
+    <Logger name="net.minecraftforge.fml.common.registry" level="ERROR" additivity="false">
+      <AppenderRef ref="SysOut" />
+    </Logger>
+
+    <!-- Suppress noisy FML loading/registry chatter -->
+    <Logger name="net.minecraftforge.fml" level="INFO" additivity="false">
+      <AppenderRef ref="SysOut" />
+    </Logger>
+
+    <!-- Applied Energistics 2 — verbose network/crafting logging -->
+    <Logger name="appeng" level="WARN" additivity="false">
+      <AppenderRef ref="SysOut" />
+    </Logger>
+
+    <!-- Integrated Dynamics — ingredient network observer can be chatty -->
+    <Logger name="org.cyclops.integrateddynamics" level="WARN" additivity="false">
+      <AppenderRef ref="SysOut" />
+    </Logger>
+
+    <!-- Cyclops Core (shared library for Integrated Dynamics family) -->
+    <Logger name="org.cyclops.cyclopscore" level="WARN" additivity="false">
+      <AppenderRef ref="SysOut" />
+    </Logger>
+
+    <!-- Mekanism — logs a lot of machine/network state at INFO -->
+    <Logger name="mekanism" level="WARN" additivity="false">
+      <AppenderRef ref="SysOut" />
+    </Logger>
+
+    <!-- Thermal series — CoFH world/ore gen logging -->
+    <Logger name="cofh" level="WARN" additivity="false">
+      <AppenderRef ref="SysOut" />
+    </Logger>
+
+    <!-- BuildCraft — pipe/fluid update spam -->
+    <Logger name="buildcraft" level="WARN" additivity="false">
+      <AppenderRef ref="SysOut" />
+    </Logger>
+
+    <!-- Ender IO — TE lifecycle / cap limit tracing -->
+    <Logger name="crazypants.enderio" level="WARN" additivity="false">
+      <AppenderRef ref="SysOut" />
+    </Logger>
+
+    <!-- Draconic Evolution / Brandon's Core -->
+    <Logger name="com.brandon3055" level="WARN" additivity="false">
+      <AppenderRef ref="SysOut" />
+    </Logger>
+
+    <!-- RFTools family (uses mcjtylib) -->
+    <Logger name="mcjty" level="WARN" additivity="false">
+      <AppenderRef ref="SysOut" />
+    </Logger>
+
+    <!-- FTB Utilities / FTB Lib -->
+    <Logger name="ftb" level="WARN" additivity="false">
+      <AppenderRef ref="SysOut" />
+    </Logger>
+
+    <!-- Root: INFO keeps normal server events visible while cutting noise -->
+    <Root level="INFO">
+      <AppenderRef ref="SysOut" />
+    </Root>
+  </Loggers>
+</Configuration>
