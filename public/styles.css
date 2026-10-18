@@ -332,3 +332,60 @@ footer { border-top: 1px solid var(--border); padding: 56px 0 32px; background: 
   .tile.wide { grid-column: span 2; }
   .float-card { position: static; width: auto; margin-top: 14px; }
 }
+
+/* ---------- exposure page ---------- */
+.exp-hero { text-align: center; }
+.exp-narrow { max-width: 760px; }
+.exp-hero .lead { margin-left: auto; margin-right: auto; }
+.exp-hero .scan-form, #password .scan-form { margin: 0 auto; }
+.exp-card { margin-top: 8px; }
+.exp-sent { color: var(--muted); margin: 0 0 14px; }
+.exp-hero .error, #expError { margin-top: 14px; }
+.muted { color: var(--muted); }
+.small { font-size: 14px; }
+.risk-badge { min-width: 110px; height: 84px; padding: 0 16px; border-radius: 20px; display: grid; place-items: center; font-size: 22px; font-weight: 800; color: #fff; }
+.risk-badge.pass { background: var(--pass); } .risk-badge.warn { background: var(--warn); }
+.risk-badge.fail { background: var(--fail); } .risk-badge.info { background: var(--info); }
+h4.sub { margin: 22px 0 10px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 13px; font-weight: 600; padding: 5px 11px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border); }
+.chip b { color: var(--accent); margin-left: 4px; }
+.breach-list { display: grid; gap: 14px; }
+.breach { border: 1px solid var(--border); border-radius: 14px; padding: 20px; background: var(--bg); }
+.breach-top { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.breach h4 { margin: 0; font-size: 18px; }
+.breach > p { color: var(--muted); margin: 10px 0 12px; }
+.advice { margin: 14px 0 0; padding-left: 20px; display: grid; gap: 6px; font-size: 15px; }
+.breach-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.breach-actions .btn { padding: 9px 16px; font-size: 14px; }
+.pw-result { margin-top: 18px; text-align: center; min-height: 28px; }
+.pw-bad { color: var(--fail); } .pw-good { color: var(--pass); }
+.exp-split { align-items: start; }
+.toolkit-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.toolkit-head h3 { margin: 0; font-size: 22px; }
+.broker-list { list-style: none; padding: 0; margin: 16px 0; display: grid; gap: 10px; }
+.broker-list li { display: flex; align-items: center; gap: 12px; justify-content: space-between; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; }
+.broker-list li.done { opacity: .6; }
+.broker-list li.done b { text-decoration: line-through; }
+.broker-list label { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; }
+.broker-list input { margin-top: 5px; accent-color: var(--accent); width: 18px; height: 18px; flex: none; }
+.broker-list .btn { padding: 8px 14px; font-size: 14px; flex: none; }
+.letter-form { display: grid; gap: 12px; margin-top: 16px; }
+.letter-form label { display: grid; gap: 6px; font-weight: 600; font-size: 14px; }
+.letter-form input:not([type="radio"]), .letter-form textarea {
+  font: inherit; font-size: 15px; color: var(--text); background: var(--surface);
+  border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; width: 100%;
+}
+.letter-form textarea { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.5; resize: vertical; }
+.seg { display: flex; gap: 8px; flex-wrap: wrap; }
+.seg label { display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; cursor: pointer; background: var(--surface); }
+.seg input { accent-color: var(--accent); }
+.letter-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.exp-grid-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 960px) { .exp-grid-4 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 760px) {
+  .exp-grid-4 { grid-template-columns: 1fr; }
+  .broker-list li { flex-direction: column; align-items: stretch; }
+  .breach-top { flex-direction: column; }
+}
+.show-all { width: 100%; margin-top: 14px; }

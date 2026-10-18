@@ -74,6 +74,7 @@
     e.preventDefault();
     const target = input.value.trim();
     if (!target) return;
+    if (target.includes('@')) { location.href = `/exposure?email=${encodeURIComponent(target)}`; return; }
     const btn = form.querySelector('button');
     btn.disabled = true;
     results.classList.add('show');

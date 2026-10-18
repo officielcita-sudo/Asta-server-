@@ -6,6 +6,8 @@ const path = require('node:path');
 const dns = require('node:dns').promises;
 const net = require('node:net');
 const tls = require('node:tls');
+const { normalizeEmail, breachReport } = require('./breach-check');
+const verify = require('./verify');
 
 const PORT = Number(process.env.PORT) || 3000;
 const PUBLIC_DIR = path.join(__dirname, 'public');
@@ -21,15 +23,14 @@ const MIME = {
   '.json': 'application/json',
 };
 
-// ---------- rate limiting (per IP, in memory) ----------
+// ---------- rate limiting (in memory) ----------
 const hits = new Map();
-function rateLimited(ip) {
+function rateLimited(key, limit = 10, windowMs = 60_000) {
   const now = Date.now();
-  const windowMs = 60_000;
-  const list = (hits.get(ip) || []).filter((t) => now - t < windowMs);
+  const list = (hits.get(key) || []).filter((t) => now - t < windowMs);
   list.push(now);
-  hits.set(ip, list);
-  return list.length > 10;
+  hits.set(key, list);
+  return list.length > limit;
 }
 
 // ---------- SSRF guard: only scan public internet hosts ----------
@@ -237,12 +238,67 @@ function send(res, status, body, type = 'application/json') {
   res.end(typeof body === 'string' || Buffer.isBuffer(body) ? body : JSON.stringify(body));
 }
 
+function readJson(req) {
+  return new Promise((resolve, reject) => {
+    let body = '';
+    req.on('data', (chunk) => {
+      body += chunk;
+      if (body.length > 4096) { reject(new Error('Request too large.')); req.destroy(); }
+    });
+    req.on('end', () => {
+      try { resolve(body ? JSON.parse(body) : {}); } catch { reject(new Error('Invalid request.')); }
+    });
+    req.on('error', reject);
+  });
+}
+
+// ---------- email exposure: verify ownership, then report ----------
+async function handleEmail(req, res, url, ip) {
+  if (url.pathname === '/api/verify/start' && req.method === 'POST') {
+    const email = normalizeEmail((await readJson(req)).email);
+    if (rateLimited(`start:${ip}`, 5, 10 * 60_000) || rateLimited(`start:${email}`, 3, 10 * 60_000)) {
+      return send(res, 429, { error: 'Too many codes requested. Wait a few minutes and try again.' });
+    }
+    const { delivered } = await verify.sendCode(email, verify.createCode(email));
+    return send(res, 200, { sent: true, delivered });
+  }
+
+  if (url.pathname === '/api/verify/confirm' && req.method === 'POST') {
+    const body = await readJson(req);
+    const email = normalizeEmail(body.email);
+    if (rateLimited(`confirm:${ip}`, 20, 10 * 60_000)) {
+      return send(res, 429, { error: 'Too many attempts. Wait a few minutes and try again.' });
+    }
+    return send(res, 200, { token: verify.checkCode(email, body.code) });
+  }
+
+  if (url.pathname === '/api/exposure' && req.method === 'GET') {
+    const token = (req.headers.authorization || '').replace(/^Bearer\s+/i, '');
+    const email = verify.readToken(token);
+    if (!email) return send(res, 401, { error: 'Your verification has expired. Verify your email again.' });
+    if (rateLimited(`report:${email}`, 10, 10 * 60_000)) {
+      return send(res, 429, { error: 'Too many reports. Wait a few minutes and try again.' });
+    }
+    return send(res, 200, await breachReport(email));
+  }
+
+  return send(res, 404, { error: 'Not found.' });
+}
+
 const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, 'http://localhost');
+  const ip = req.headers['x-forwarded-for']?.split(',')[0].trim() || req.socket.remoteAddress;
+
+  if (url.pathname.startsWith('/api/verify/') || url.pathname === '/api/exposure') {
+    try {
+      return await handleEmail(req, res, url, ip);
+    } catch (err) {
+      return send(res, 400, { error: err.message || 'Request failed.' });
+    }
+  }
 
   if (url.pathname === '/api/scan') {
-    const ip = req.headers['x-forwarded-for']?.split(',')[0].trim() || req.socket.remoteAddress;
-    if (rateLimited(ip)) return send(res, 429, { error: 'Too many scans. Try again in a minute.' });
+    if (rateLimited(`scan:${ip}`)) return send(res, 429, { error: 'Too many scans. Try again in a minute.' });
     try {
       const host = normalizeTarget(url.searchParams.get('target'));
       return send(res, 200, await scan(host));
