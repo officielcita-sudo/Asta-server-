@@ -64,7 +64,7 @@ function emailHtml(code) {
   return `<!doctype html><html><body style="margin:0;background:#f4f6f9;font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;color:#0d1420">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="padding:32px 16px"><tr><td align="center">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:460px;background:#ffffff;border:1px solid #dde2ea;border-radius:16px;padding:32px">
-      <tr><td style="font-size:20px;font-weight:800">asta<span style="color:#0e7c66">security</span></td></tr>
+      <tr><td style="font-size:20px;font-weight:800">mourchid<span style="color:#0e7c66">security</span></td></tr>
       <tr><td style="padding-top:22px;font-size:16px;line-height:1.5">Here is your verification code to see your exposure report:</td></tr>
       <tr><td style="padding:18px 0;font-size:34px;font-weight:800;letter-spacing:8px;font-family:Menlo,Consolas,monospace">${code}</td></tr>
       <tr><td style="font-size:14px;line-height:1.5;color:#5b6577">It expires in 10 minutes. If you didn't request this, you can safely ignore this email. Nobody can see your report without this code.</td></tr>
@@ -87,7 +87,7 @@ async function sendCode(email, code) {
     body: JSON.stringify({
       from: config.mailFrom,
       to: [email],
-      subject: `Your Asta Security code: ${code}`,
+      subject: `Your Mourchid Security code: ${code}`,
       text: `Your verification code is ${code}\n\nIt expires in 10 minutes. If you didn't request this, ignore this email.`,
       html: emailHtml(code),
     }),

@@ -26,9 +26,9 @@ const config = {
   trustProxy: env.TRUST_PROXY === '1' || env.TRUST_PROXY === 'true',
   sessionSecret: env.SESSION_SECRET || '',
   resendApiKey: env.RESEND_API_KEY || '',
-  mailFrom: env.MAIL_FROM || 'Asta Security <onboarding@resend.dev>',
+  mailFrom: env.MAIL_FROM || 'Mourchid Security <onboarding@resend.dev>',
   contactEmail: env.CONTACT_EMAIL || 'hello@example.com',
-  // Public address of the site, e.g. https://asta-security.onrender.com (no trailing slash).
+  // Public address of the site, e.g. https://mourchid-security.onrender.com (no trailing slash).
   // Used in share previews, canonical links and the sitemap. Falls back to the request's host.
   siteUrl: (env.SITE_URL || '').replace(/\/+$/, ''),
 };

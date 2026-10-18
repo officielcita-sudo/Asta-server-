@@ -1,8 +1,8 @@
 {
-  "name": "asta-security",
+  "name": "mourchid-security",
   "version": "1.0.0",
   "private": true,
-  "description": "Asta Security marketing site with a passive website security scanner",
+  "description": "Mourchid Security marketing site with a passive website security scanner",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

@@ -2,7 +2,7 @@
 # Deploy: Render dashboard -> New -> Blueprint -> pick this repository.
 services:
   - type: web
-    name: asta-security
+    name: mourchid-security
     runtime: node
     plan: free
     branch: claude/bold-gates-powzbt
@@ -20,10 +20,10 @@ services:
       - key: SESSION_SECRET
         generateValue: true
       - key: MAIL_FROM
-        value: Asta Security <verify@granex-legal.eu>
+        value: Mourchid Security <verify@granex-legal.eu>
       - key: RESEND_API_KEY
         sync: false
       - key: SITE_URL
         sync: false
       - key: CONTACT_EMAIL
-        sync: false
+        value: astamed20@gmail.com

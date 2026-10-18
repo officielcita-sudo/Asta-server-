@@ -1,4 +1,4 @@
-// Asta Security — static site + passive website security scan API.
+// Mourchid Security — static site + passive website security scan API.
 // Zero dependencies; requires Node 18+ (global fetch).
 const http = require('node:http');
 const fs = require('node:fs');
@@ -128,7 +128,7 @@ async function fetchHead(url) {
     method: 'GET',
     redirect: 'manual',
     signal: AbortSignal.timeout(TIMEOUT_MS),
-    headers: { 'user-agent': 'AstaSecurityScanner/1.0 (+passive header check)' },
+    headers: { 'user-agent': 'MourchidSecurityScanner/1.0 (+passive header check)' },
   });
   res.body?.cancel().catch(() => {});
   return res;
@@ -407,7 +407,7 @@ if (require.main === module) {
     process.exit(1);
   }
   server.listen(PORT, () => {
-    console.log(`Asta Security running on http://localhost:${PORT}`);
+    console.log(`Mourchid Security running on http://localhost:${PORT}`);
     if (!config.resendApiKey) console.log('Email sending is off (no RESEND_API_KEY): verification codes will be printed here.');
   });
   const shutdown = () => server.close(() => process.exit(0));

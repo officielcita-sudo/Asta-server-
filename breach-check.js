@@ -1,7 +1,7 @@
 // Breach report for a single email address the requester has already
 // verified they own. Data source: XposedOrNot (free, public breach index).
 const TIMEOUT_MS = 15000;
-const UA = 'AstaSecurity/1.0 (+self-service breach check)';
+const UA = 'MourchidSecurity/1.0 (+self-service breach check)';
 
 const EMAIL_RE = /^[^\s@]{1,64}@[a-z0-9.-]{1,253}\.[a-z]{2,24}$/i;
 

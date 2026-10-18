@@ -1,4 +1,4 @@
-# Asta Security
+# Mourchid Security
 
 Marketing site for a website security scanner. The scan box runs real **passive** checks against a domain:
 
@@ -31,7 +31,7 @@ Copy `.env.example` to `.env` and fill it in. The server reads `.env` at startup
 | `TRUST_PROXY` | Behind a proxy | Set to `1` on Railway, Render, Fly or behind nginx so rate limits use the real visitor IP. Leave `0` if exposed directly, or visitors could fake their IP. |
 | `SESSION_SECRET` | In production | Signs verification tokens. Generate with `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`. |
 | `RESEND_API_KEY` | In production | [Resend](https://resend.com) API key for emailing verification codes. Without it (local only), codes are printed in the server terminal. |
-| `MAIL_FROM` | In production | Sender, e.g. `Asta Security <verify@yourdomain.com>`, on a domain verified in Resend. `onboarding@resend.dev` only delivers to your own Resend account address. |
+| `MAIL_FROM` | In production | Sender, e.g. `Mourchid Security <verify@yourdomain.com>`, on a domain verified in Resend. `onboarding@resend.dev` only delivers to your own Resend account address. |
 | `CONTACT_EMAIL` | Recommended | Address used in the site's Contact links. |
 
 `GET /healthz` returns `{"ok":true}` for uptime checks.
@@ -55,7 +55,7 @@ The repository includes a `render.yaml` blueprint, so deploying takes about thre
 2. **New → Blueprint**, pick this repository, then **Apply**.
 3. When asked, fill in:
    - `RESEND_API_KEY`: your Resend sending key
-   - `SITE_URL`: leave empty for the first deploy, then set it to the address Render gives you (e.g. `https://asta-security.onrender.com`) and redeploy, so link previews work
+   - `SITE_URL`: leave empty for the first deploy, then set it to the address Render gives you (e.g. `https://mourchid-security.onrender.com`) and redeploy, so link previews work
    - `CONTACT_EMAIL`: optional; contact links stay hidden until it is set
 4. Open the address Render shows. `NODE_ENV=production`, `TRUST_PROXY=1` and a random `SESSION_SECRET` are set by the blueprint.
 
