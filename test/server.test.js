@@ -65,11 +65,27 @@ test('site address is filled into pages, robots.txt and sitemap', async () => {
   assert.ok(!(await sitemap.text()).includes('__SITE_URL__'));
 });
 
-test('icons and manifest are served with long caching', async () => {
-  for (const f of ['/favicon.ico', '/icon-512.png', '/og-image.png', '/site.webmanifest', '/img/exposure-hero.svg']) {
-    const res = await fetch(base + f);
-    assert.strictEqual(res.status, 200, f);
-    assert.match(res.headers.get('cache-control'), /max-age=86400/, f);
+test('pages link to versioned assets that are cached long-term', async () => {
+  const html = await (await fetch(`${base}/remove`)).text();
+  const refs = [...html.matchAll(/(?:src|href)="(\/[^"]+\.(?:css|js|png|svg|ico|webmanifest)\?v=[0-9a-f]{10})"/g)].map((m) => m[1]);
+  for (const name of ['/styles.css', '/app.js', '/remove.js', '/removal-data.js', '/theme.js', '/favicon.ico', '/site.webmanifest']) {
+    assert.ok(refs.some((r) => r.startsWith(name + '?v=')), `${name} not versioned`);
+  }
+  assert.ok(!/(?:src|href)="\/styles\.css"/.test(html), 'unversioned stylesheet link left');
+  const res = await fetch(base + refs.find((r) => r.startsWith('/styles.css')));
+  assert.strictEqual(res.status, 200);
+  assert.match(res.headers.get('cache-control'), /max-age=31536000, immutable/);
+});
+
+test('unversioned or stale-version assets revalidate with ETag', async () => {
+  for (const url of ['/styles.css', '/styles.css?v=0000000000', '/img/exposure-hero.svg']) {
+    const res = await fetch(base + url);
+    assert.strictEqual(res.status, 200, url);
+    assert.strictEqual(res.headers.get('cache-control'), 'no-cache', url);
+    const etag = res.headers.get('etag');
+    assert.ok(etag, url);
+    const again = await fetch(base + url, { headers: { 'if-none-match': etag } });
+    assert.strictEqual(again.status, 304, url);
   }
 });
 

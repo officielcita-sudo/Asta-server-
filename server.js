@@ -310,12 +310,45 @@ function siteUrl(req) {
   return `${proto}://${host}`;
 }
 
+// ---------- asset versioning ----------
+// Pages link to /styles.css?v=<content hash>, so every change gets a new URL
+// and browsers never mix a new page with an old cached stylesheet or script.
+const crypto = require('node:crypto');
+const VERSIONED = new Set(['.css', '.js', '.svg', '.png', '.ico', '.webmanifest']);
+const assetHashes = new Map(); // '/styles.css' -> 'a1b2c3d4e5'
+const etags = new Map(); // absolute file path -> etag
+
+function hashFile(file) {
+  return crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex').slice(0, 10);
+}
+
+function indexAssets(dir = PUBLIC_DIR) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) { indexAssets(full); continue; }
+    const hash = hashFile(full);
+    etags.set(full, `"${hash}"`);
+    if (VERSIONED.has(path.extname(entry.name))) {
+      assetHashes.set('/' + path.relative(PUBLIC_DIR, full).split(path.sep).join('/'), hash);
+    }
+  }
+}
+indexAssets();
+
+function versionAssets(html) {
+  return html.replace(/(src|href)="(\/[^"?#]+)"/g, (m, attr, url) => {
+    const v = assetHashes.get(url);
+    return v ? `${attr}="${url}?v=${v}"` : m;
+  });
+}
+
 // Text files are served with the site address and contact email filled in.
 const TEMPLATED = new Set(['.html', '.txt', '.xml']);
-function renderText(buffer, req) {
-  return buffer.toString('utf8')
+function renderText(buffer, req, ext = '.html') {
+  const text = buffer.toString('utf8')
     .replaceAll('__SITE_URL__', siteUrl(req))
     .replaceAll('hello@example.com', config.contactEmail);
+  return ext === '.html' ? versionAssets(text) : text;
 }
 
 // ---------- email exposure: verify ownership, then report ----------
@@ -394,9 +427,18 @@ const server = http.createServer(async (req, res) => {
         send(res, 404, e ? 'Not found' : renderText(page, req), MIME['.html']));
     }
     const ext = path.extname(file);
-    if (TEMPLATED.has(ext)) return send(res, 200, renderText(data, req), MIME[ext]);
-    const longCache = ['.png', '.svg', '.ico', '.webmanifest'].includes(ext);
-    send(res, 200, data, MIME[ext] || 'application/octet-stream', { 'cache-control': `public, max-age=${longCache ? 86400 : 3600}` });
+    if (TEMPLATED.has(ext)) return send(res, 200, renderText(data, req, ext), MIME[ext]);
+
+    // Versioned URLs never change content, so they can be cached for a year.
+    // Unversioned requests must be revalidated with the ETag every time.
+    const etag = etags.get(file) || `"${crypto.createHash('sha256').update(data).digest('hex').slice(0, 10)}"`;
+    const versioned = url.searchParams.get('v') === assetHashes.get(url.pathname);
+    const cache = versioned ? 'public, max-age=31536000, immutable' : 'no-cache';
+    if (req.headers['if-none-match'] === etag) {
+      res.writeHead(304, { ...SECURITY_HEADERS, etag, 'cache-control': cache });
+      return res.end();
+    }
+    send(res, 200, data, MIME[ext] || 'application/octet-stream', { 'cache-control': cache, etag });
   });
 });
 
