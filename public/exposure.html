@@ -10,9 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
-  <script>
-    try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
-  </script>
+  <script src="/theme.js"></script>
 </head>
 <body>
 
@@ -52,8 +50,8 @@
       <a href="/#faq">FAQ</a>
     </nav>
     <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><svg><use href="/#i-moon"/></svg></button>
-      <button class="theme-toggle menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><svg><use href="/#i-menu"/></svg></button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><svg><use href="#i-moon"/></svg></button>
+      <button class="theme-toggle menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><svg><use href="#i-menu"/></svg></button>
       <a class="btn btn-primary" href="/#scan">Free scan</a>
     </div>
   </div>
@@ -65,6 +63,12 @@
       <span class="eyebrow">Private · Verified · Free</span>
       <h1>See where your email was exposed. <em>Then clean it up.</em></h1>
       <p class="lead">We check your email against known data breaches, explain what leaked, and give you the steps and letters to remove your data. To protect everyone, results are only shown after you prove the email is yours.</p>
+
+      <ol class="stepper" id="stepper" aria-label="Progress">
+        <li class="active" data-step="1"><span>1</span>Your email</li>
+        <li data-step="2"><span>2</span>Verify code</li>
+        <li data-step="3"><span>3</span>Your report</li>
+      </ol>
 
       <div class="exp-card" id="stepEmail">
         <form class="scan-form" id="emailForm" autocomplete="on">
@@ -79,7 +83,7 @@
         <p class="exp-sent">Code sent to <b id="sentTo"></b>. It expires in 10 minutes.</p>
         <form class="scan-form" id="codeForm">
           <label for="code" class="sr-only">Verification code</label>
-          <input id="code" name="code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="6-digit code" required autocomplete="one-time-code">
+          <input id="code" class="code-input" name="code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="••••••" required autocomplete="one-time-code">
           <button class="btn btn-primary" type="submit">Verify &amp; check</button>
         </form>
         <p class="scan-note"><a href="#" id="changeEmail">Use a different email</a> · <a href="#" id="resend">Resend code</a></p>
@@ -162,6 +166,7 @@
     </div>
   </section>
 </main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <footer>
   <div class="wrap">

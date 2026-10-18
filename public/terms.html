@@ -10,9 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
-  <script>
-    try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
-  </script>
+  <script src="/theme.js"></script>
 </head>
 <body>
 
@@ -52,8 +50,8 @@
       <a href="/#faq">FAQ</a>
     </nav>
     <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><svg><use href="/#i-moon"/></svg></button>
-      <button class="theme-toggle menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><svg><use href="/#i-menu"/></svg></button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><svg><use href="#i-moon"/></svg></button>
+      <button class="theme-toggle menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><svg><use href="#i-menu"/></svg></button>
       <a class="btn btn-primary" href="/#scan">Free scan</a>
     </div>
   </div>

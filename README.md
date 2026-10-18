@@ -22,12 +22,19 @@ A self-service page where people check **their own** email:
 
 ### Configuration
 
+Copy `.env.example` to `.env` and fill it in. The server reads `.env` at startup; real environment variables (for example in Railway's Variables tab) take priority.
+
 | Variable | Required | Purpose |
 |---|---|---|
-| `RESEND_API_KEY` | Yes, in production | API key from [resend.com](https://resend.com) used to email verification codes. Without it, codes are printed to the server log (local testing only). |
-| `MAIL_FROM` | Yes, in production | Sender, e.g. `Asta Security <verify@yourdomain.com>`. The domain must be verified in Resend. |
-| `SESSION_SECRET` | Recommended | Secret for signing verification tokens. If unset, a random one is generated at startup (tokens then reset on restart). |
-| `PORT` | No | Port to listen on (default 3000). |
+| `PORT` | No | Port to listen on (default 3000; hosting platforms set it automatically). |
+| `NODE_ENV` | In production | Set to `production` when deployed. The server then refuses to start without `RESEND_API_KEY` and a 32+ character `SESSION_SECRET`. |
+| `TRUST_PROXY` | Behind a proxy | Set to `1` on Railway, Render, Fly or behind nginx so rate limits use the real visitor IP. Leave `0` if exposed directly, or visitors could fake their IP. |
+| `SESSION_SECRET` | In production | Signs verification tokens. Generate with `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`. |
+| `RESEND_API_KEY` | In production | [Resend](https://resend.com) API key for emailing verification codes. Without it (local only), codes are printed in the server terminal. |
+| `MAIL_FROM` | In production | Sender, e.g. `Asta Security <verify@yourdomain.com>`, on a domain verified in Resend. `onboarding@resend.dev` only delivers to your own Resend account address. |
+| `CONTACT_EMAIL` | Recommended | Address used in the site's Contact links. |
+
+`GET /healthz` returns `{"ok":true}` for uptime checks.
 
 Limits: 3 codes per email and 5 per IP every 10 minutes; 5 wrong attempts invalidate a code; codes expire after 10 minutes and verification tokens after 15.
 
@@ -47,16 +54,18 @@ Works on any Node host (Railway, Render, Fly.io, a VPS): start command `npm star
 ## Structure
 
 ```
-server.js          static file server, GET /api/scan, and the /api/verify + /api/exposure endpoints
+server.js          static file server, security headers, GET /api/scan, /api/verify + /api/exposure, /healthz
+config.js          settings from environment variables and .env
 breach-check.js    breach lookup and report shaping
 verify.js          email codes (sent via Resend) and signed tokens
 public/index.html  landing page
 public/styles.css  styles (light/dark themes)
 public/app.js      theme toggle, mobile nav, scan UI
-public/exposure.*  My exposure page (verify flow, report, password check, removal toolkit)
+public/exposure.*  My exposure page (verify flow, report with action plan and timeline, password check, removal toolkit)
+public/theme.js    applies the saved light/dark theme before first paint
 public/brokers.js  data broker opt-out list
 public/terms.html, privacy.html, 404.html
-test/              unit tests: input validation, private-network guard, codes, tokens, report parsing
+test/              unit + HTTP tests: validation, SSRF guard, codes, tokens, report parsing, headers, limits, .env
 ```
 
 ## Safety
@@ -64,9 +73,10 @@ test/              unit tests: input validation, private-network guard, codes, t
 - The scanner only fetches the home page and opens a TLS connection; it never logs in, submits forms or probes for exploits.
 - Hosts resolving to private/loopback/link-local addresses are rejected, and only ports 80/443 are allowed.
 - Scans are rate-limited to 10 per minute per IP.
+- Every response carries a strict Content-Security-Policy, HSTS, frame, MIME-sniffing, referrer and permissions headers.
 
 ## Before going live
 
-- Set `RESEND_API_KEY`, `MAIL_FROM` and `SESSION_SECRET`.
+- Set `NODE_ENV=production`, `TRUST_PROXY=1`, `RESEND_API_KEY`, `MAIL_FROM`, `SESSION_SECRET` and `CONTACT_EMAIL`.
 - Replace the placeholders: `hello@example.com` (contact links), the prices in the Pricing section, and the legal text in `terms.html` / `privacy.html` (the privacy policy should mention that emails are sent to XposedOrNot for breach lookups).
 - Re-check the broker opt-out links in `public/brokers.js` occasionally; brokers move these pages.

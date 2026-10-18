@@ -1,0 +1,66 @@
+const test = require('node:test');
+const assert = require('node:assert');
+const fs = require('node:fs');
+const os = require('node:os');
+const path = require('node:path');
+const { loadDotEnv } = require('../config');
+const { server } = require('../server');
+
+let base;
+test.before(() => new Promise((resolve) => {
+  server.listen(0, () => { base = `http://127.0.0.1:${server.address().port}`; resolve(); });
+}));
+test.after(() => new Promise((resolve) => server.close(resolve)));
+
+test('pages carry security headers', async () => {
+  const res = await fetch(`${base}/`);
+  assert.strictEqual(res.status, 200);
+  for (const h of ['content-security-policy', 'strict-transport-security', 'x-frame-options', 'x-content-type-options', 'referrer-policy', 'permissions-policy']) {
+    assert.ok(res.headers.get(h), h);
+  }
+  assert.match(res.headers.get('content-security-policy'), /script-src 'self'/);
+});
+
+test('unknown API paths return JSON 404', async () => {
+  const res = await fetch(`${base}/api/nope`);
+  assert.strictEqual(res.status, 404);
+  assert.deepStrictEqual(await res.json(), { error: 'Not found.' });
+});
+
+test('oversized JSON body gets a 413, not a dropped connection', async () => {
+  const res = await fetch(`${base}/api/verify/start`, { method: 'POST', body: 'a'.repeat(10_000) });
+  assert.strictEqual(res.status, 413);
+});
+
+test('report requires a valid token', async () => {
+  const res = await fetch(`${base}/api/exposure`, { headers: { authorization: 'Bearer forged.token' } });
+  assert.strictEqual(res.status, 401);
+});
+
+test('X-Forwarded-For is ignored unless TRUST_PROXY is set', async () => {
+  const codes = [];
+  for (let i = 0; i < 7; i++) {
+    const res = await fetch(`${base}/api/verify/start`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'x-forwarded-for': `9.9.9.${i}` },
+      body: JSON.stringify({ email: `xff${i}@example.com` }),
+    });
+    codes.push(res.status);
+  }
+  assert.ok(codes.includes(429), `expected rate limit, got ${codes}`);
+});
+
+test('path traversal and bad encodings are rejected', async () => {
+  assert.notStrictEqual((await fetch(`${base}/%2e%2e/server.js`)).status, 200);
+  assert.strictEqual((await fetch(`${base}/%E0%A4%A`)).status, 400);
+});
+
+test('.env loader fills unset variables without overriding real ones', () => {
+  const file = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'asta-')), '.env');
+  fs.writeFileSync(file, '# comment\nASTA_T1=one\nASTA_T2="two words"\nASTA_T3=from-file\n');
+  process.env.ASTA_T3 = 'real';
+  loadDotEnv(file);
+  assert.strictEqual(process.env.ASTA_T1, 'one');
+  assert.strictEqual(process.env.ASTA_T2, 'two words');
+  assert.strictEqual(process.env.ASTA_T3, 'real');
+});

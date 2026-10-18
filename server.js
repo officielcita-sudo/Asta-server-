@@ -6,10 +6,11 @@ const path = require('node:path');
 const dns = require('node:dns').promises;
 const net = require('node:net');
 const tls = require('node:tls');
+const { config, checkProduction } = require('./config');
 const { normalizeEmail, breachReport } = require('./breach-check');
 const verify = require('./verify');
 
-const PORT = Number(process.env.PORT) || 3000;
+const PORT = config.port;
 const PUBLIC_DIR = path.join(__dirname, 'public');
 const TIMEOUT_MS = 8000;
 
@@ -21,6 +22,32 @@ const MIME = {
   '.png': 'image/png',
   '.ico': 'image/x-icon',
   '.json': 'application/json',
+  '.txt': 'text/plain; charset=utf-8',
+  '.webmanifest': 'application/manifest+json',
+};
+
+// Our own security headers: the site should pass its own scanner.
+const CSP = [
+  "default-src 'self'",
+  "script-src 'self'",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "font-src https://fonts.gstatic.com",
+  "img-src 'self' data:",
+  "connect-src 'self' https://api.pwnedpasswords.com",
+  "frame-ancestors 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "object-src 'none'",
+].join('; ');
+
+const SECURITY_HEADERS = {
+  'content-security-policy': CSP,
+  'strict-transport-security': 'max-age=31536000; includeSubDomains',
+  'x-content-type-options': 'nosniff',
+  'x-frame-options': 'DENY',
+  'referrer-policy': 'strict-origin-when-cross-origin',
+  'permissions-policy': 'camera=(), microphone=(), geolocation=(), payment=()',
+  'cross-origin-opener-policy': 'same-origin',
 };
 
 // ---------- rate limiting (in memory) ----------
@@ -31,6 +58,22 @@ function rateLimited(key, limit = 10, windowMs = 60_000) {
   list.push(now);
   hits.set(key, list);
   return list.length > limit;
+}
+
+// Drop rate-limit entries older than the longest window so memory stays flat.
+setInterval(() => {
+  const cutoff = Date.now() - 10 * 60_000;
+  for (const [key, list] of hits) {
+    if (!list.length || list[list.length - 1] < cutoff) hits.delete(key);
+  }
+}, 60_000).unref();
+
+function clientIp(req) {
+  if (config.trustProxy) {
+    const forwarded = req.headers['x-forwarded-for'];
+    if (forwarded) return forwarded.split(',')[0].trim();
+  }
+  return req.socket.remoteAddress;
 }
 
 // ---------- SSRF guard: only scan public internet hosts ----------
@@ -228,28 +271,40 @@ function summarize(host, findings, landedOn = host) {
 }
 
 // ---------- HTTP server ----------
-function send(res, status, body, type = 'application/json') {
+function send(res, status, body, type = 'application/json', extra = {}) {
   res.writeHead(status, {
+    ...SECURITY_HEADERS,
     'content-type': type,
-    'x-content-type-options': 'nosniff',
-    'referrer-policy': 'strict-origin-when-cross-origin',
-    'x-frame-options': 'DENY',
+    'cache-control': type === 'application/json' ? 'no-store' : 'no-cache',
+    ...extra,
   });
   res.end(typeof body === 'string' || Buffer.isBuffer(body) ? body : JSON.stringify(body));
+}
+
+class HttpError extends Error {
+  constructor(status, message) { super(message); this.status = status; }
 }
 
 function readJson(req) {
   return new Promise((resolve, reject) => {
     let body = '';
+    let tooLarge = false;
     req.on('data', (chunk) => {
+      if (tooLarge) return;
       body += chunk;
-      if (body.length > 4096) { reject(new Error('Request too large.')); req.destroy(); }
+      if (body.length > 4096) { tooLarge = true; body = ''; }
     });
     req.on('end', () => {
-      try { resolve(body ? JSON.parse(body) : {}); } catch { reject(new Error('Invalid request.')); }
+      if (tooLarge) return reject(new HttpError(413, 'Request too large.'));
+      try { resolve(body ? JSON.parse(body) : {}); } catch { reject(new HttpError(400, 'Invalid request.')); }
     });
     req.on('error', reject);
   });
+}
+
+// Pages are served with the contact address from CONTACT_EMAIL filled in.
+function renderHtml(buffer) {
+  return buffer.toString('utf8').replaceAll('hello@example.com', config.contactEmail);
 }
 
 // ---------- email exposure: verify ownership, then report ----------
@@ -286,14 +341,17 @@ async function handleEmail(req, res, url, ip) {
 }
 
 const server = http.createServer(async (req, res) => {
-  const url = new URL(req.url, 'http://localhost');
-  const ip = req.headers['x-forwarded-for']?.split(',')[0].trim() || req.socket.remoteAddress;
+  let url;
+  try { url = new URL(req.url, 'http://localhost'); } catch { return send(res, 400, { error: 'Bad request.' }); }
+  const ip = clientIp(req);
+
+  if (url.pathname === '/healthz') return send(res, 200, { ok: true });
 
   if (url.pathname.startsWith('/api/verify/') || url.pathname === '/api/exposure') {
     try {
       return await handleEmail(req, res, url, ip);
     } catch (err) {
-      return send(res, 400, { error: err.message || 'Request failed.' });
+      return send(res, err.status || 400, { error: err.message || 'Request failed.' });
     }
   }
 
@@ -307,22 +365,42 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
-  let file = path.normalize(path.join(PUBLIC_DIR, decodeURIComponent(url.pathname)));
-  if (!file.startsWith(PUBLIC_DIR)) return send(res, 403, 'Forbidden', 'text/plain');
+  if (url.pathname.startsWith('/api/')) return send(res, 404, { error: 'Not found.' });
+  if (req.method !== 'GET' && req.method !== 'HEAD') {
+    return send(res, 405, 'Method not allowed', 'text/plain', { allow: 'GET, HEAD' });
+  }
+
+  let decoded;
+  try { decoded = decodeURIComponent(url.pathname); } catch { return send(res, 400, 'Bad request', 'text/plain'); }
+  let file = path.normalize(path.join(PUBLIC_DIR, decoded));
+  if (!file.startsWith(PUBLIC_DIR + path.sep) && file !== PUBLIC_DIR) return send(res, 403, 'Forbidden', 'text/plain');
   if (url.pathname.endsWith('/')) file = path.join(file, 'index.html');
   if (!path.extname(file)) file += '.html';
 
   fs.readFile(file, (err, data) => {
     if (err) {
       return fs.readFile(path.join(PUBLIC_DIR, '404.html'), (e, page) =>
-        send(res, 404, e ? 'Not found' : page, MIME['.html']));
+        send(res, 404, e ? 'Not found' : renderHtml(page), MIME['.html']));
     }
-    send(res, 200, data, MIME[path.extname(file)] || 'application/octet-stream');
+    const ext = path.extname(file);
+    if (ext === '.html') return send(res, 200, renderHtml(data), MIME['.html']);
+    send(res, 200, data, MIME[ext] || 'application/octet-stream', { 'cache-control': 'public, max-age=3600' });
   });
 });
 
 if (require.main === module) {
-  server.listen(PORT, () => console.log(`Asta Security running on http://localhost:${PORT}`));
+  const problems = checkProduction();
+  if (problems.length) {
+    console.error(`Refusing to start in production:\n- ${problems.join('\n- ')}`);
+    process.exit(1);
+  }
+  server.listen(PORT, () => {
+    console.log(`Asta Security running on http://localhost:${PORT}`);
+    if (!config.resendApiKey) console.log('Email sending is off (no RESEND_API_KEY): verification codes will be printed here.');
+  });
+  const shutdown = () => server.close(() => process.exit(0));
+  process.on('SIGTERM', shutdown);
+  process.on('SIGINT', shutdown);
 }
 
 module.exports = { scan, normalizeTarget, isPrivateAddress, server };

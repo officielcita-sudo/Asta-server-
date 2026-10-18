@@ -10,9 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
-  <script>
-    try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
-  </script>
+  <script src="/theme.js"></script>
 </head>
 <body>
 
@@ -140,7 +138,36 @@
     </div>
   </section>
 
-  <section class="alt" id="how">
+  <section class="alt" id="email-check">
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="eyebrow">New · My exposure</span>
+        <h2>Has your email been in a data breach?</h2>
+        <p>Verify your email and see every known breach it appears in, what leaked, and exactly what to do next. Then use our removal toolkit to get your details off data broker sites.</p>
+        <ul class="checks">
+          <li><svg><use href="#i-check"/></svg>Breach history with a personal action plan</li>
+          <li><svg><use href="#i-check"/></svg>Private password check that never sends your password</li>
+          <li><svg><use href="#i-check"/></svg>Opt-out checklist and GDPR/CCPA deletion letters</li>
+        </ul>
+        <a class="btn btn-primary" href="/exposure">Check my email</a>
+      </div>
+      <div class="report reveal" aria-hidden="true">
+        <h4>Exposure summary</h4>
+        <div class="meta">you@example.com · verified</div>
+        <div class="stat-tiles demo-tiles">
+          <div class="stat-tile"><b>4</b><span>Breaches</span></div>
+          <div class="stat-tile"><b>2</b><span>With passwords</span></div>
+        </div>
+        <div class="rows" style="display:grid;gap:8px;margin-top:14px">
+          <div class="row">Change exposed passwords <span class="pill fail">Urgent</span></div>
+          <div class="row">Turn on two-factor login <span class="pill warn">Next</span></div>
+          <div class="row">Remove data broker listings <span class="pill pass">3 / 16</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">How it works</span>
