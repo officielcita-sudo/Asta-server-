@@ -1,10 +1,6 @@
 (() => {
   const $ = (sel) => document.querySelector(sel);
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const store = {
-    get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
-    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
-  };
 
   // ---------- verify flow ----------
   const stepEmail = $('#stepEmail');
@@ -94,6 +90,7 @@
       report.scrollIntoView({ behavior: 'smooth', block: 'start' });
       const data = await api('/api/exposure', { headers: { authorization: `Bearer ${token}` } });
       renderReport(data);
+      try { sessionStorage.setItem('ms_email', JSON.stringify(data.email)); } catch {}
       setStep(3);
       stepCode.hidden = true;
       stepEmail.hidden = false;
@@ -203,8 +200,9 @@
         <div class="chips">${b.dataTypes.map((t) => `<span class="chip">${esc(t)}</span>`).join('')}</div>
         ${b.advice.length ? `<ul class="advice">${b.advice.map((a) => `<li>${esc(a)}</li>`).join('')}</ul>` : ''}
         <div class="breach-actions">
-          ${b.domain ? `<a class="btn btn-ghost" href="https://${esc(b.domain)}" target="_blank" rel="noopener nofollow">Go to ${esc(b.domain)}</a>` : ''}
-          ${b.domain ? `<button class="btn btn-ghost" data-letter="${i}">Request deletion</button>` : ''}
+          ${b.domain ? `<a class="btn btn-ghost" href="https://${esc(b.domain)}/.well-known/change-password" target="_blank" rel="noopener nofollow" title="Opens the site's change-password page if it supports the standard address">Change password</a>` : ''}
+          ${b.domain ? `<a class="btn btn-ghost" href="https://www.google.com/search?q=${encodeURIComponent(`how to delete ${b.domain} account`)}" target="_blank" rel="noopener nofollow">Delete account</a>` : ''}
+          ${b.domain ? `<button class="btn btn-ghost" data-letter="${i}">Request deletion letter</button>` : ''}
         </div>
       </article>`).join('');
 
@@ -216,7 +214,7 @@
             <h3>${esc(d.email)}</h3>
             <p>Risk score ${d.risk.score}/100 · checked ${new Date(d.checkedAt).toLocaleString()}</p>
           </div>
-          <a class="btn btn-primary" href="#remove">Start removal</a>
+          <a class="btn btn-primary" href="/remove">Open Removal Center</a>
         </div>
         <div class="stat-tiles">
           <div class="stat-tile"><b>${d.breachCount}</b><span>Breaches</span></div>
@@ -242,14 +240,9 @@
     });
     report.querySelectorAll('[data-letter]').forEach((btn) => btn.addEventListener('click', () => {
       const b = d.breaches[Number(btn.dataset.letter)];
-      const f = $('#letterForm');
-      f.company.value = b.name;
-      f.email.value = d.email;
-      updateLetter();
-      $('#remove').scrollIntoView({ behavior: 'smooth' });
+      try { sessionStorage.setItem('ms_prefill', JSON.stringify({ company: b.name, domain: b.domain, email: d.email })); } catch {}
+      location.href = '/remove#letters';
     }));
-    $('#letterForm').email.value = d.email;
-    updateLetter();
   }
 
   // ---------- password check (k-anonymity, browser only) ----------
@@ -274,80 +267,6 @@
     }
     $('#pw').value = '';
   });
-
-  // ---------- broker checklist ----------
-  const done = new Set(store.get('brokersDone', []));
-  const list = $('#brokerList');
-  const progress = () => { $('#brokerProgress').textContent = `${done.size} of ${window.BROKERS.length} done`; };
-  list.innerHTML = window.BROKERS.map((b) => `
-    <li class="${done.has(b.id) ? 'done' : ''}">
-      <label><input type="checkbox" data-id="${b.id}" ${done.has(b.id) ? 'checked' : ''}>
-        <span><b>${b.priority ? '★ ' : ''}${esc(b.name)}</b> <span class="muted small">${esc(b.region)}</span><br>
-        <span class="muted small">${esc(b.note)}</span></span>
-      </label>
-      <a class="btn btn-ghost" href="${b.url}" target="_blank" rel="noopener nofollow">Opt out</a>
-    </li>`).join('');
-  list.addEventListener('change', (e) => {
-    const id = e.target.dataset.id;
-    if (!id) return;
-    e.target.checked ? done.add(id) : done.delete(id);
-    e.target.closest('li').classList.toggle('done', e.target.checked);
-    store.set('brokersDone', [...done]);
-    progress();
-  });
-  progress();
-
-  // ---------- deletion letter ----------
-  const form = $('#letterForm');
-  function updateLetter() {
-    const law = form.law.value;
-    const company = form.company.value.trim() || '[Company name]';
-    const name = form.name.value.trim() || '[Your full name]';
-    const email = form.email.value.trim() || '[Your email address]';
-    const date = new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
-    const legal = law === 'gdpr'
-      ? {
-        subject: 'Request for erasure under Article 17 GDPR',
-        basis: 'Under Article 17 of the General Data Protection Regulation (GDPR), I request that you erase all personal data you hold about me without undue delay.',
-        deadline: 'Please confirm the erasure within one month of receiving this request, as required by Article 12(3) GDPR.',
-      }
-      : {
-        subject: 'Request to delete personal information under the CCPA',
-        basis: 'Under the California Consumer Privacy Act (Cal. Civ. Code § 1798.105), I request that you delete all personal information you have collected about me, and direct your service providers to do the same.',
-        deadline: 'Please confirm the deletion within 45 days of receiving this request, as required by the CCPA.',
-      };
-    form.querySelector('#letter').value =
-`Subject: ${legal.subject}
-
-To the Data Protection / Privacy team at ${company},
-
-${date}
-
-${legal.basis}
-
-My account or records with you are associated with this email address: ${email}
-
-Please also:
-- confirm which categories of my personal data you held and who you shared them with;
-- stop any sale or sharing of my personal data;
-- tell me if you are unable to delete any data, and the legal reason why.
-
-${legal.deadline}
-
-Kind regards,
-${name}
-${email}`;
-    const subject = encodeURIComponent(legal.subject);
-    const body = encodeURIComponent(form.querySelector('#letter').value.split('\n').slice(2).join('\n'));
-    $('#mailLetter').href = `mailto:?subject=${subject}&body=${body}`;
-  }
-  form.addEventListener('input', updateLetter);
-  $('#copyLetter').addEventListener('click', async () => {
-    const text = form.querySelector('#letter').value;
-    try { await navigator.clipboard.writeText(text); } catch { form.querySelector('#letter').select(); document.execCommand('copy'); }
-    toast('Letter copied to clipboard');
-  });
-  updateLetter();
 
   // Prefill from the homepage (?email=...)
   const pre = new URLSearchParams(location.search).get('email');

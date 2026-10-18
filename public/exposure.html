@@ -60,10 +60,9 @@
     </a>
     <nav class="nav-links" id="navLinks">
       <a href="/exposure">My exposure</a>
-      <a href="/#features">Features</a>
-      <a href="/#how">How it works</a>
+      <a href="/remove">Removal center</a>
+      <a href="/#features">Website scan</a>
       <a href="/#free">Free tools</a>
-      <a href="/#industries">Industries</a>
       <a href="/#faq">FAQ</a>
     </nav>
     <div class="nav-actions">
@@ -130,41 +129,19 @@
 
   <section id="remove">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Removal toolkit</span>
-        <h2>Get your data taken down</h2>
-        <p>Breached companies and data brokers can be asked to delete what they hold on you. Work through the checklist, then send deletion requests where needed.</p>
-      </div>
-
-      <div class="split exp-split">
-        <div class="reveal">
-          <div class="toolkit-head">
-            <h3>Data broker checklist</h3>
-            <span class="pill pass" id="brokerProgress">0 done</span>
-          </div>
-          <p class="muted">Start with the starred sites. Your progress is saved in this browser.</p>
-          <ul class="broker-list" id="brokerList"></ul>
-          <p class="muted small">Brokers change their opt-out pages often. For the full, community-maintained list see the <a href="https://github.com/yaelwrites/Big-Ass-Data-Broker-Opt-Out-List" target="_blank" rel="noopener">Big Ass Data Broker Opt-Out List</a>.</p>
+      <div class="rc-cta reveal">
+        <div>
+          <span class="eyebrow">Removal Center</span>
+          <h2>Ready to clean up? Follow the full removal plan.</h2>
+          <p>Lock down your accounts, get your details out of search results, opt out of data brokers, and send legal deletion requests with deadline tracking. Free, step by step, and saved in your browser.</p>
+          <a class="btn btn-primary" href="/remove">Open the Removal Center</a>
         </div>
-
-        <div class="reveal">
-          <div class="toolkit-head"><h3>Deletion request letter</h3></div>
-          <p class="muted">Send this to a company's privacy or data-protection contact. Companies usually must answer within 30 days (GDPR) or 45 days (CCPA).</p>
-          <form class="letter-form" id="letterForm">
-            <div class="seg" role="radiogroup" aria-label="Law">
-              <label><input type="radio" name="law" value="gdpr" checked> GDPR (EU/UK)</label>
-              <label><input type="radio" name="law" value="ccpa"> CCPA (California)</label>
-            </div>
-            <label>Company <input name="company" placeholder="e.g. Example Inc." required></label>
-            <label>Your full name <input name="name" placeholder="Optional"></label>
-            <label>Your email <input name="email" type="email" placeholder="you@example.com"></label>
-            <textarea id="letter" rows="12" readonly></textarea>
-            <div class="letter-actions">
-              <button class="btn btn-primary" type="button" id="copyLetter">Copy letter</button>
-              <a class="btn btn-ghost" id="mailLetter" href="#">Open in email app</a>
-            </div>
-          </form>
-        </div>
+        <ul class="rc-cta-list">
+          <li><svg><use href="#i-lock"/></svg>Secure accounts and sign out stolen sessions</li>
+          <li><svg><use href="#i-search"/></svg>Remove yourself from Google and Bing</li>
+          <li><svg><use href="#i-eye"/></svg>Opt out of data brokers</li>
+          <li><svg><use href="#i-file"/></svg>Deletion letters for 7 privacy laws</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -196,7 +173,7 @@
         </a>
         <p>Free website security scans and personal breach reports, explained in plain language.</p>
       </div>
-      <div><h5>Product</h5><ul><li><a href="/#features">Features</a></li><li><a href="/#free">Free tools</a></li><li><a href="/#scan">Free scan</a></li></ul></div>
+      <div><h5>Product</h5><ul><li><a href="/#features">Features</a></li><li><a href="/#free">Free tools</a></li><li><a href="/#scan">Free scan</a></li><li><a href="/exposure">My exposure</a></li><li><a href="/remove">Removal center</a></li></ul></div>
       <div><h5>Company</h5><ul><li><a href="/#industries">Industries</a></li><li><a href="/#faq">FAQ</a></li><li><a href="mailto:hello@example.com">Contact</a></li></ul></div>
       <div><h5>Legal</h5><ul><li><a href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li></ul></div>
     </div>
@@ -208,7 +185,6 @@
 </footer>
 
 <script src="/app.js"></script>
-<script src="/brokers.js"></script>
 <script src="/exposure.js"></script>
 </body>
 </html>

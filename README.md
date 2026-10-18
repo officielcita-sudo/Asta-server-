@@ -20,6 +20,20 @@ A self-service page where people check **their own** email:
 3. **Password check** – the browser hashes the password and sends only the first 5 characters of the SHA-1 hash to Have I Been Pwned's Pwned Passwords range API (k-anonymity). The password never reaches this server.
 4. **Removal toolkit** – a checklist of major data brokers with their opt-out pages (progress saved in the browser), and a GDPR Article 17 / CCPA deletion-request letter generator, prefilled from any breach in the report.
 
+## Removal Center (`/remove`)
+
+A free, step-by-step plan for removing exposed data, with progress saved in the browser:
+
+1. **Secure your accounts** – malware scan, security checkups and "sign out everywhere" for Google, Microsoft, Apple and Meta, password manager, two-factor login.
+2. **Search engines** – Google "Results about you", personal-info and outdated-content removal, EU/UK right-to-be-forgotten forms for Google and Bing, plus buttons to search the web for your email and set a Google Alert.
+3. **Data brokers** – US people-search opt-outs, California DROP, marketing data brokers, and the community opt-out list.
+4. **Marketing and spam** – credit-offer, direct-mail and do-not-call registries (US, UK, Canada, Brazil) and French call reporting.
+5. **Legal requests** – letters for GDPR, UK GDPR, CCPA, other US state laws, PIPEDA, LGPD and Moroccan Law 09-08 (delete, access, or stop selling/marketing); a tracker with follow-up dates, calendar (.ics) reminders and a link to the right regulator when a company ignores you.
+6. **Protect yourself** – email aliases, credit freezes, identity-theft and cybercrime help, regulators per region.
+7. **Intimate images** – StopNCII and Take It Down.
+
+A region picker shows only what applies where you live. The plan can be downloaded as a text file or printed. Resources live in `public/removal-data.js` and are checked by `test/removal.test.js`. From the exposure report, each breach links to the site's change-password page (`/.well-known/change-password`), an account-deletion search, and a pre-filled deletion letter.
+
 ### Configuration
 
 Copy `.env.example` to `.env` and fill it in. The server reads `.env` at startup; real environment variables (for example in Railway's Variables tab) take priority.
@@ -73,13 +87,14 @@ verify.js          email codes (sent via Resend) and signed tokens
 public/index.html  landing page
 public/styles.css  styles (light/dark themes)
 public/app.js      theme toggle, mobile nav, scan UI
-public/exposure.*  My exposure page (verify flow, report with action plan and timeline, password check, removal toolkit)
+public/exposure.*  My exposure page (verify flow, report with action plan and timeline, password check)
+public/remove.*    Removal Center page
+public/removal-data.js  removal resources, privacy-law letter templates and deadlines
 public/theme.js    applies the saved light/dark theme before first paint
 public/img/        illustrations (exposure hero, all-clear state, 404)
 public/*.png|ico   favicon, app icons, maskable icon, social share image (og-image.png)
 public/site.webmanifest, robots.txt, sitemap.xml
 render.yaml        Render deployment blueprint
-public/brokers.js  data broker opt-out list
 public/terms.html, privacy.html, 404.html
 test/              unit + HTTP tests: validation, SSRF guard, codes, tokens, report parsing, headers, limits, .env
 ```
