@@ -55,6 +55,24 @@ test('path traversal and bad encodings are rejected', async () => {
   assert.strictEqual((await fetch(`${base}/%E0%A4%A`)).status, 400);
 });
 
+test('site address is filled into pages, robots.txt and sitemap', async () => {
+  const html = await (await fetch(`${base}/`)).text();
+  assert.ok(!html.includes('__SITE_URL__'));
+  assert.match(html, /property="og:image" content="http:\/\/127\.0\.0\.1:\d+\/og-image\.png"/);
+  assert.ok(!(await (await fetch(`${base}/robots.txt`)).text()).includes('__SITE_URL__'));
+  const sitemap = await fetch(`${base}/sitemap.xml`);
+  assert.match(sitemap.headers.get('content-type'), /xml/);
+  assert.ok(!(await sitemap.text()).includes('__SITE_URL__'));
+});
+
+test('icons and manifest are served with long caching', async () => {
+  for (const f of ['/favicon.ico', '/icon-512.png', '/og-image.png', '/site.webmanifest', '/img/exposure-hero.svg']) {
+    const res = await fetch(base + f);
+    assert.strictEqual(res.status, 200, f);
+    assert.match(res.headers.get('cache-control'), /max-age=86400/, f);
+  }
+});
+
 test('.env loader fills unset variables without overriding real ones', () => {
   const file = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'asta-')), '.env');
   fs.writeFileSync(file, '# comment\nASTA_T1=one\nASTA_T2="two words"\nASTA_T3=from-file\n');

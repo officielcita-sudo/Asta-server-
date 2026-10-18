@@ -24,6 +24,7 @@ const MIME = {
   '.json': 'application/json',
   '.txt': 'text/plain; charset=utf-8',
   '.webmanifest': 'application/manifest+json',
+  '.xml': 'application/xml; charset=utf-8',
 };
 
 // Our own security headers: the site should pass its own scanner.
@@ -302,9 +303,19 @@ function readJson(req) {
   });
 }
 
-// Pages are served with the contact address from CONTACT_EMAIL filled in.
-function renderHtml(buffer) {
-  return buffer.toString('utf8').replaceAll('hello@example.com', config.contactEmail);
+function siteUrl(req) {
+  if (config.siteUrl) return config.siteUrl;
+  const proto = config.trustProxy && req.headers['x-forwarded-proto'] === 'https' ? 'https' : 'http';
+  const host = String(req.headers.host || 'localhost').replace(/[^a-z0-9.:-]/gi, '');
+  return `${proto}://${host}`;
+}
+
+// Text files are served with the site address and contact email filled in.
+const TEMPLATED = new Set(['.html', '.txt', '.xml']);
+function renderText(buffer, req) {
+  return buffer.toString('utf8')
+    .replaceAll('__SITE_URL__', siteUrl(req))
+    .replaceAll('hello@example.com', config.contactEmail);
 }
 
 // ---------- email exposure: verify ownership, then report ----------
@@ -380,11 +391,12 @@ const server = http.createServer(async (req, res) => {
   fs.readFile(file, (err, data) => {
     if (err) {
       return fs.readFile(path.join(PUBLIC_DIR, '404.html'), (e, page) =>
-        send(res, 404, e ? 'Not found' : renderHtml(page), MIME['.html']));
+        send(res, 404, e ? 'Not found' : renderText(page, req), MIME['.html']));
     }
     const ext = path.extname(file);
-    if (ext === '.html') return send(res, 200, renderHtml(data), MIME['.html']);
-    send(res, 200, data, MIME[ext] || 'application/octet-stream', { 'cache-control': 'public, max-age=3600' });
+    if (TEMPLATED.has(ext)) return send(res, 200, renderText(data, req), MIME[ext]);
+    const longCache = ['.png', '.svg', '.ico', '.webmanifest'].includes(ext);
+    send(res, 200, data, MIME[ext] || 'application/octet-stream', { 'cache-control': `public, max-age=${longCache ? 86400 : 3600}` });
   });
 });
 

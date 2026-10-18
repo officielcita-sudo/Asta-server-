@@ -3,9 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Asta Security — Website Security Scanner</title>
-  <meta name="description" content="Free, passive website security scan. See your exposure in seconds and get plain-language fixes your whole team can act on.">
+  <title>Asta Security — Free Website Security Scan & Email Breach Check</title>
+  <meta name="description" content="Free website security scan and private email breach check. See your exposure in seconds and get plain-language fixes.">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#f4f6f9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b1017" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="__SITE_URL__/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Asta Security">
+  <meta property="og:title" content="Asta Security — Free Website Security Scan & Email Breach Check">
+  <meta property="og:description" content="Free website security scan and private email breach check. See your exposure in seconds and get plain-language fixes.">
+  <meta property="og:url" content="__SITE_URL__/">
+  <meta property="og:image" content="__SITE_URL__/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Asta Security: know your exposure before attackers do.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="__SITE_URL__/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -45,7 +62,7 @@
       <a href="/exposure">My exposure</a>
       <a href="#features">Features</a>
       <a href="#how">How it works</a>
-      <a href="#pricing">Pricing</a>
+      <a href="#free">Free tools</a>
       <a href="#industries">Industries</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -80,19 +97,19 @@
       <div class="mock" aria-hidden="true">
         <div class="mock-top">
           <div class="dots"><i></i><i></i><i></i></div>
-          <div class="mock-url">app.astasecurity.com/overview</div>
-          <span class="pill pass">Monitoring</span>
+          <div class="mock-url">Scan report · yourcompany.com</div>
+          <span class="pill pass">Grade B</span>
         </div>
         <div class="mock-grid">
-          <div class="tile"><small>Score</small><b>86</b></div>
-          <div class="tile"><small>Open issues</small><b>7</b></div>
-          <div class="tile"><small>Assets</small><b>12</b></div>
+          <div class="tile"><small>Score</small><b>84</b></div>
+          <div class="tile"><small>Passed</small><b>8</b></div>
+          <div class="tile"><small>To fix</small><b>2</b></div>
           <div class="tile wide">
-            <small>Issues resolved / week</small>
+            <small>Checks by area</small>
             <div class="bars"><i style="height:35%"></i><i style="height:52%"></i><i style="height:44%"></i><i style="height:68%"></i><i style="height:58%"></i><i style="height:80%"></i><i style="height:72%"></i><i style="height:92%"></i></div>
           </div>
           <div class="tile">
-            <small>Coverage</small>
+            <small>Passed</small>
             <svg class="ring" viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="none" stroke="var(--border)" stroke-width="5"/><circle cx="18" cy="18" r="15" fill="none" stroke="var(--accent)" stroke-width="5" stroke-dasharray="74 94" stroke-linecap="round" transform="rotate(-90 18 18)"/></svg>
           </div>
           <div class="rows">
@@ -116,7 +133,7 @@
       <div class="stat"><b>&lt; 10s</b><span>Typical scan time</span></div>
       <div class="stat"><b>10+</b><span>Security checks</span></div>
       <div class="stat"><b>0</b><span>Software to install</span></div>
-      <div class="stat"><b>24/7</b><span>Monitoring on paid plans</span></div>
+      <div class="stat"><b>$0</b><span>Free for everyone</span></div>
     </div>
   </div>
 
@@ -184,19 +201,19 @@
   <section>
     <div class="wrap split">
       <div class="reveal">
-        <span class="eyebrow">Built for the whole team</span>
+        <span class="eyebrow">Plain-language results</span>
         <h2>Security reports anyone can read</h2>
-        <p>Not everyone speaks in CVEs. The Asta dashboard turns technical findings into clear priorities, so owners, office managers and developers can all see where you stand.</p>
+        <p>Not everyone speaks in CVEs. Every scan turns technical findings into clear priorities, so owners, office managers and developers can all see where you stand and what to do next.</p>
         <ul class="checks">
-          <li><svg><use href="#i-check"/></svg>Letter grade and trend for every site you own</li>
-          <li><svg><use href="#i-check"/></svg>Email alerts when something changes or a certificate is about to expire</li>
-          <li><svg><use href="#i-check"/></svg>Shareable PDF reports for insurers, auditors and clients</li>
+          <li><svg><use href="#i-check"/></svg>A letter grade and score out of 100 for every scan</li>
+          <li><svg><use href="#i-check"/></svg>The most urgent problems first, each with a one-line fix</li>
+          <li><svg><use href="#i-check"/></svg>Rescan any time to confirm your fixes worked</li>
         </ul>
         <a class="btn btn-primary" href="#scan">Run a free scan</a>
       </div>
       <div class="report reveal" aria-hidden="true">
-        <h4>Monthly security summary</h4>
-        <div class="meta">yourcompany.com · 3 assets</div>
+        <h4>Scan summary</h4>
+        <div class="meta">yourcompany.com · 10 checks</div>
         <small style="font-weight:700">Overall posture</small>
         <div class="meter"><i></i></div>
         <div class="rows" style="display:grid;gap:8px">
@@ -209,49 +226,32 @@
     </div>
   </section>
 
-  <section class="alt" id="pricing">
+  <section class="alt" id="free">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Pricing</span>
-        <h2>Start free. Upgrade when you need monitoring.</h2>
-        <p>Simple plans for small teams and growing companies. Cancel anytime.</p>
+        <span class="eyebrow">100% free</span>
+        <h2>Every tool, free for everyone</h2>
+        <p>No plans, no trials, no credit card and no account. Security basics should be available to everyone.</p>
       </div>
-      <div class="plans">
+      <div class="plans free-tools">
         <div class="plan reveal">
-          <h3>Free</h3>
-          <p class="desc">A one-off check-up for a single website.</p>
-          <div class="price">$0</div>
-          <ul>
-            <li><svg><use href="#i-check"/></svg>Unlimited on-demand scans</li>
-            <li><svg><use href="#i-check"/></svg>Grade and fix list</li>
-            <li><svg><use href="#i-check"/></svg>No account required</li>
-          </ul>
-          <a class="btn btn-ghost" href="#scan">Scan now</a>
+          <div class="icon"><svg><use href="#i-shield"/></svg></div>
+          <h3>Website scan</h3>
+          <p class="desc">Grade any site you own on encryption, headers, cookies and information leaks.</p>
+          <a class="btn btn-ghost" href="#scan">Scan a website</a>
         </div>
         <div class="plan featured reveal">
-          <span class="badge">Most popular</span>
-          <h3>Pro</h3>
-          <p class="desc">Continuous monitoring and alerts for small businesses.</p>
-          <div class="price">$29<small>/month</small></div>
-          <ul>
-            <li><svg><use href="#i-check"/></svg>Up to 5 websites</li>
-            <li><svg><use href="#i-check"/></svg>Daily automatic scans</li>
-            <li><svg><use href="#i-check"/></svg>Email alerts &amp; expiry reminders</li>
-            <li><svg><use href="#i-check"/></svg>Monthly PDF report</li>
-          </ul>
-          <a class="btn btn-primary" href="#contact">Start Pro</a>
+          <span class="badge">Most used</span>
+          <div class="icon"><svg><use href="#i-eye"/></svg></div>
+          <h3>Email exposure report</h3>
+          <p class="desc">See every known breach your email is in, what leaked, and a personal action plan.</p>
+          <a class="btn btn-primary" href="/exposure">Check my email</a>
         </div>
         <div class="plan reveal">
-          <h3>Business</h3>
-          <p class="desc">For agencies and teams with many assets.</p>
-          <div class="price">Custom</div>
-          <ul>
-            <li><svg><use href="#i-check"/></svg>Unlimited websites</li>
-            <li><svg><use href="#i-check"/></svg>Team seats &amp; roles</li>
-            <li><svg><use href="#i-check"/></svg>Manual penetration testing add-on</li>
-            <li><svg><use href="#i-check"/></svg>Priority support</li>
-          </ul>
-          <a class="btn btn-ghost" href="#contact">Talk to us</a>
+          <div class="icon"><svg><use href="#i-file"/></svg></div>
+          <h3>Removal toolkit</h3>
+          <p class="desc">Opt out of data brokers and send GDPR or CCPA deletion letters in a few clicks.</p>
+          <a class="btn btn-ghost" href="/exposure#remove">Start removing</a>
         </div>
       </div>
     </div>
@@ -262,7 +262,7 @@
       <div class="section-head reveal">
         <span class="eyebrow">Industries</span>
         <h2>Every industry has different risks</h2>
-        <p>Compliance rules and attacker interest vary by sector. Our checks and reports adapt to what matters for yours.</p>
+        <p>Compliance rules and attacker interest vary by sector, but the same basics protect all of them.</p>
       </div>
       <div class="industries">
         <div class="industry reveal"><div class="icon"><svg><use href="#i-heart"/></svg></div><div><h3>Healthcare</h3><p>Protect patient portals and booking forms that handle sensitive data.</p></div></div>
@@ -270,7 +270,7 @@
         <div class="industry reveal"><div class="icon"><svg><use href="#i-scale"/></svg></div><div><h3>Legal</h3><p>Show clients their confidential information sits behind solid defenses.</p></div></div>
         <div class="industry reveal"><div class="icon"><svg><use href="#i-cart"/></svg></div><div><h3>E-commerce</h3><p>Secure checkout and login cookies so customer accounts stay theirs.</p></div></div>
         <div class="industry reveal"><div class="icon"><svg><use href="#i-cloud"/></svg></div><div><h3>SaaS</h3><p>Catch header and TLS regressions after every deploy, before customers do.</p></div></div>
-        <div class="industry reveal"><div class="icon"><svg><use href="#i-cap"/></svg></div><div><h3>Education</h3><p>Monitor the many sites and portals that schools and campuses run.</p></div></div>
+        <div class="industry reveal"><div class="icon"><svg><use href="#i-cap"/></svg></div><div><h3>Education</h3><p>Check the many sites and portals that schools and campuses run.</p></div></div>
       </div>
     </div>
   </section>
@@ -284,8 +284,10 @@
       <div class="faq">
         <details class="reveal"><summary>Is the scan safe to run on my live site?</summary><p>Yes. The free scan is passive: it makes a couple of ordinary page requests and opens a TLS connection, the same thing a visitor's browser does. It never tries to log in, submit forms or exploit anything.</p></details>
         <details class="reveal"><summary>Can I scan any website?</summary><p>Please only scan websites you own or have permission to assess. Scans are rate-limited and private network addresses are blocked.</p></details>
-        <details class="reveal"><summary>Is this a full penetration test?</summary><p>No. The automated scan covers common configuration issues. For an in-depth manual assessment, ask about the penetration testing add-on on the Business plan.</p></details>
-        <details class="reveal"><summary>Do you store my results?</summary><p>Free scans are not saved. Paid plans keep scan history so you can track changes over time.</p></details>
+        <details class="reveal"><summary>Is it really free?</summary><p>Yes. Every tool on this site is free, with no account, trial or credit card. There is no paid version.</p></details>
+        <details class="reveal"><summary>Is this a full penetration test?</summary><p>No. The automated scan covers common configuration issues that attackers look for first. For an in-depth assessment of a complex application, hire a professional penetration tester.</p></details>
+        <details class="reveal"><summary>How does the email check protect my privacy?</summary><p>You can only see the report for an email you can receive mail at: we send a one-time code first. Results are shown once and never stored, and password checks happen inside your browser.</p></details>
+        <details class="reveal"><summary>Do you store my results?</summary><p>No. Website scans and email reports are shown to you and then discarded.</p></details>
       </div>
     </div>
   </section>
@@ -294,10 +296,10 @@
     <div class="wrap">
       <div class="cta-box reveal">
         <h2>Ready to see where you stand?</h2>
-        <p>Run a free scan now, or get in touch to set up monitoring for your whole organization.</p>
+        <p>Scan your website and check your email in under a minute. Free, private and no signup.</p>
         <a class="btn" href="#scan">Start free scan</a>
         &nbsp;
-        <a class="btn" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.5)" href="mailto:hello@example.com">Contact sales</a>
+        <a class="btn btn-outline-light" href="/exposure">Check my email</a>
       </div>
     </div>
   </section>
@@ -311,9 +313,9 @@
           <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 4 7v8c0 7.5 5.1 12.6 12 15 6.9-2.4 12-7.5 12-15V7z" fill="var(--accent)"/><path d="m10.5 16.5 4 4 7-8" fill="none" stroke="var(--accent-ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
           asta<span>security</span>
         </a>
-        <p>Website security checks and monitoring that make sense to everyone on your team.</p>
+        <p>Free website security scans and personal breach reports, explained in plain language.</p>
       </div>
-      <div><h5>Product</h5><ul><li><a href="#features">Features</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#scan">Free scan</a></li></ul></div>
+      <div><h5>Product</h5><ul><li><a href="#features">Features</a></li><li><a href="#free">Free tools</a></li><li><a href="#scan">Free scan</a></li></ul></div>
       <div><h5>Company</h5><ul><li><a href="#industries">Industries</a></li><li><a href="#faq">FAQ</a></li><li><a href="mailto:hello@example.com">Contact</a></li></ul></div>
       <div><h5>Legal</h5><ul><li><a href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li></ul></div>
     </div>

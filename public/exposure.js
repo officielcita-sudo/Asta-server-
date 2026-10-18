@@ -173,9 +173,10 @@
     if (!d.breachCount) {
       report.innerHTML = `
         <div class="results-card">
-          <div class="results-head">
-            <div class="grade A">✓</div>
-            <div><h3>${esc(d.email)}</h3><p>Not found in any known data breach. Keep it that way with unique passwords and two-factor login.</p></div>
+          <div class="all-clear">
+            <img src="/img/all-clear.svg" alt="" width="200" height="167">
+            <h3>Good news: ${esc(d.email)} is not in any known breach</h3>
+            <p class="muted">Keep it that way with unique passwords and two-factor login.</p>
           </div>
           <div class="actions-plan">${actionPlan(d).map(([lvl, t, x]) => `<div class="plan-step ${lvl}"><b>${esc(t)}</b><span>${esc(x)}</span></div>`).join('')}</div>
         </div>`;

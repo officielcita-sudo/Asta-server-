@@ -27,6 +27,9 @@
 
   $('#year').textContent = new Date().getFullYear();
 
+  // Contact links stay hidden until CONTACT_EMAIL is configured on the server.
+  document.querySelectorAll('a[href="mailto:hello@example.com"]').forEach((a) => (a.closest('li') || a).remove());
+
   // ---------- reveal on scroll ----------
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
@@ -64,7 +67,7 @@
             ${data.landedOn && data.landedOn !== data.host ? `<p>Redirects to ${esc(data.landedOn)}; headers checked there.</p>` : ''}
             <p>Score ${data.score}/100 · ${issues} issue${issues === 1 ? '' : 's'} to review · scanned ${new Date(data.scannedAt).toLocaleTimeString()}</p>
           </div>
-          <a class="btn btn-primary" href="#pricing">Monitor this site</a>
+          <a class="btn btn-primary" href="/exposure">Check your email too</a>
         </div>
         ${rows}
       </div>`;

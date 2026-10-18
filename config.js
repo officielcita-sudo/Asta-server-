@@ -28,6 +28,9 @@ const config = {
   resendApiKey: env.RESEND_API_KEY || '',
   mailFrom: env.MAIL_FROM || 'Asta Security <onboarding@resend.dev>',
   contactEmail: env.CONTACT_EMAIL || 'hello@example.com',
+  // Public address of the site, e.g. https://asta-security.onrender.com (no trailing slash).
+  // Used in share previews, canonical links and the sitemap. Falls back to the request's host.
+  siteUrl: (env.SITE_URL || '').replace(/\/+$/, ''),
 };
 
 // Fail fast on settings that would make production unsafe.

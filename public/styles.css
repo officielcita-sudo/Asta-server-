@@ -432,3 +432,15 @@ h4.sub { margin: 22px 0 10px; font-size: 13px; text-transform: uppercase; letter
   .stepper li { padding-right: 10px; font-size: 13px; }
   .pills { justify-content: flex-start; }
 }
+.btn-outline-light { background: transparent !important; color: #fff !important; border-color: rgba(255,255,255,.5) !important; }
+.free-tools .plan { align-items: flex-start; }
+.free-tools .plan .icon { width: 48px; height: 48px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; margin-bottom: 18px; }
+.free-tools .plan .icon svg { width: 24px; height: 24px; }
+.free-tools .plan .desc { min-height: 0; flex: 1; }
+.exp-illus { width: 300px; max-width: 80%; height: auto; margin: 0 auto 8px; }
+.all-clear { text-align: center; padding: 8px 0 18px; }
+.all-clear img { width: 200px; height: auto; margin: 0 auto 6px; }
+.all-clear h3 { font-size: 22px; letter-spacing: -0.02em; margin: 0 0 6px; word-break: break-word; }
+.notfound .wrap { text-align: center; }
+.notfound img { width: 280px; max-width: 80%; height: auto; margin: 0 auto 12px; }
+@media (max-width: 760px) { .exp-illus { width: 230px; } }

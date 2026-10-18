@@ -47,9 +47,21 @@ npm test
 
 Node 18+ is required. There are no dependencies.
 
-## Deploy
+## Deploy for free on Render
 
-Works on any Node host (Railway, Render, Fly.io, a VPS): start command `npm start`, and the app listens on `$PORT`.
+The repository includes a `render.yaml` blueprint, so deploying takes about three minutes:
+
+1. Sign in at [render.com](https://render.com) with GitHub (the free plan needs no card).
+2. **New → Blueprint**, pick this repository, then **Apply**.
+3. When asked, fill in:
+   - `RESEND_API_KEY`: your Resend sending key
+   - `SITE_URL`: leave empty for the first deploy, then set it to the address Render gives you (e.g. `https://asta-security.onrender.com`) and redeploy, so link previews work
+   - `CONTACT_EMAIL`: optional; contact links stay hidden until it is set
+4. Open the address Render shows. `NODE_ENV=production`, `TRUST_PROXY=1` and a random `SESSION_SECRET` are set by the blueprint.
+
+The free plan sleeps after 15 minutes without visitors; the first visit after that takes about a minute to wake up. Verification codes are kept in memory, so the service runs as a single instance (the free plan's default).
+
+Any other Node host (Koyeb, Fly.io, a VPS) works too: start command `npm start`, health check `/healthz`, and the variables from `.env.example`.
 
 ## Structure
 
@@ -63,6 +75,10 @@ public/styles.css  styles (light/dark themes)
 public/app.js      theme toggle, mobile nav, scan UI
 public/exposure.*  My exposure page (verify flow, report with action plan and timeline, password check, removal toolkit)
 public/theme.js    applies the saved light/dark theme before first paint
+public/img/        illustrations (exposure hero, all-clear state, 404)
+public/*.png|ico   favicon, app icons, maskable icon, social share image (og-image.png)
+public/site.webmanifest, robots.txt, sitemap.xml
+render.yaml        Render deployment blueprint
 public/brokers.js  data broker opt-out list
 public/terms.html, privacy.html, 404.html
 test/              unit + HTTP tests: validation, SSRF guard, codes, tokens, report parsing, headers, limits, .env
