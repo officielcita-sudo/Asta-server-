@@ -89,6 +89,21 @@ async function fetchHead(url) {
   return res;
 }
 
+// Follow redirects by hand (max 5) so every hop passes the private-network guard,
+// and grade the headers of the page visitors actually land on.
+async function fetchFinal(url) {
+  for (let hop = 0; hop < 5; hop++) {
+    const res = await fetchHead(url);
+    const loc = res.headers.get('location');
+    if (res.status < 300 || res.status >= 400 || !loc) return { res, url };
+    const next = new URL(loc, url);
+    if (next.protocol !== 'https:') return { res, url };
+    await assertPublicHost(next.hostname);
+    url = next.href;
+  }
+  throw new Error('Too many redirects.');
+}
+
 function certInfo(host) {
   return new Promise((resolve) => {
     const socket = tls.connect({ host, port: 443, servername: host, timeout: TIMEOUT_MS }, () => {
@@ -115,9 +130,9 @@ async function scan(host) {
   await assertPublicHost(host);
   const findings = [];
 
-  const [cert, httpsRes, httpRes] = await Promise.all([
+  const [cert, final, httpRes] = await Promise.all([
     certInfo(host),
-    fetchHead(`https://${host}/`).catch(() => null),
+    fetchFinal(`https://${host}/`).catch(() => null),
     fetchHead(`http://${host}/`).catch(() => null),
   ]);
 
@@ -156,10 +171,11 @@ async function scan(host) {
       'Add a permanent (301) redirect from http:// to https://.'));
   }
 
-  if (!httpsRes) {
+  if (!final) {
     return summarize(host, findings);
   }
-  const h = httpsRes.headers;
+  const h = final.res.headers;
+  const landedOn = new URL(final.url).host;
 
   const hsts = h.get('strict-transport-security');
   findings.push(check('hsts', 'Strict-Transport-Security', hsts ? 'pass' : 'warn',
@@ -200,14 +216,14 @@ async function scan(host) {
       'Set Secure, HttpOnly and SameSite on every cookie.'));
   }
 
-  return summarize(host, findings);
+  return summarize(host, findings, landedOn);
 }
 
-function summarize(host, findings) {
+function summarize(host, findings, landedOn = host) {
   const weights = { fail: 20, warn: 8, info: 2, pass: 0 };
   const score = Math.max(0, 100 - findings.reduce((s, f) => s + weights[f.status], 0));
   const grade = score >= 90 ? 'A' : score >= 75 ? 'B' : score >= 60 ? 'C' : score >= 40 ? 'D' : 'F';
-  return { host, score, grade, scannedAt: new Date().toISOString(), findings };
+  return { host, landedOn, score, grade, scannedAt: new Date().toISOString(), findings };
 }
 
 // ---------- HTTP server ----------

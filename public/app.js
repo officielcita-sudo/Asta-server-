@@ -61,6 +61,7 @@
           <div class="grade ${data.grade}">${data.grade}</div>
           <div>
             <h3>${esc(data.host)}</h3>
+            ${data.landedOn && data.landedOn !== data.host ? `<p>Redirects to ${esc(data.landedOn)}; headers checked there.</p>` : ''}
             <p>Score ${data.score}/100 · ${issues} issue${issues === 1 ? '' : 's'} to review · scanned ${new Date(data.scannedAt).toLocaleTimeString()}</p>
           </div>
           <a class="btn btn-primary" href="#pricing">Monitor this site</a>
